@@ -31,6 +31,20 @@
 
 이 패치는 일본어 원문을 기준으로 게임 안의 대사, 선택지, 자료, 메뉴, 인물 소개, 스태프 크레디트를 한국어로 옮깁니다. 게임의 일본어 언어 설정 자리에 한국어가 표시되는 방식입니다.
 
+## 적용 화면
+
+개발 중인 시험판(FONT-20261021-01)에서 찍은 화면입니다. 배포판에서는 글꼴과 표현이 달라질 수 있습니다. 이미지를 누르면 크게 볼 수 있습니다.
+
+<p align="center">
+  <a href="assets/paranormasight2/screens/title.webp"><img src="assets/paranormasight2/screens/title-960.webp" alt="한국어 제목과 메뉴가 표시된 타이틀 화면" width="100%"></a>
+</p>
+
+| 시작 안내 · 한글 패치 제작자 표기 | 인물 목록 |
+|---|---|
+| <a href="assets/paranormasight2/screens/warning.webp"><img src="assets/paranormasight2/screens/warning-960.webp" alt="한국어 시작 안내와 한글 패치 제작자 표기"></a> | <a href="assets/paranormasight2/screens/characters.webp"><img src="assets/paranormasight2/screens/characters-960.webp" alt="한국어 인물 목록 화면"></a> |
+| **자료 · 카메시마루** | **자료 · 카메시마 남해의 대재난** |
+| <a href="assets/paranormasight2/screens/document-kamessy.webp"><img src="assets/paranormasight2/screens/document-kamessy-960.webp" alt="한국어 자료 화면, 카메시마루"></a> | <a href="assets/paranormasight2/screens/document-disaster.webp"><img src="assets/paranormasight2/screens/document-disaster-960.webp" alt="한국어 자료 화면, 카메시마 남해의 대재난"></a> |
+
 ## 진행 현황
 
 | 단계 | 상태 | 내용 |

@@ -38,7 +38,6 @@
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
     margin: 0;
     background: var(--deep);
@@ -193,6 +192,44 @@
   footer .maker { color: var(--foam); font-weight: 700; }
   footer .maker b { color: #ff8fbf; }
 
+  /* screenshots: Apple-style carousel */
+  .carousel { --slide: min(820px, 80vw); --gap: 22px; --dur: 5s; margin-top: 4px; }
+  .viewport { overflow: hidden; padding: 6px 0 4px; }
+  .track { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--gap); will-change: transform;
+    transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.24, 1); }
+  .slide { flex: 0 0 var(--slide); opacity: 0.38; transform: scale(0.94); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 0.61, 0.24, 1); }
+  .slide.is-active { opacity: 1; transform: none; }
+  .slide-btn { display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #000; cursor: pointer; }
+  .slide:not(.is-active) .slide-btn { cursor: default; }
+  .slide.is-active .slide-btn { cursor: zoom-in; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45); }
+  .slide-btn img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .cap { text-align: center; margin: 12px 0 0; color: var(--muted); font-size: 15px; transition: color 0.6s; }
+  .slide.is-active .cap { color: var(--foam); }
+  .controls { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 18px; }
+  .dots { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; background: rgba(11, 42, 46, 0.75); border: 1px solid var(--line); }
+  .pip { position: relative; width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; background: rgba(233, 244, 241, 0.32); cursor: pointer; overflow: hidden;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.24, 1), background-color 0.3s; }
+  .pip:hover { background: rgba(233, 244, 241, 0.55); }
+  .pip.is-active { width: 48px; background: rgba(233, 244, 241, 0.3); }
+  .pip .fill { position: absolute; inset: 0 auto 0 0; width: 0; border-radius: inherit; background: var(--glow); }
+  .play { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: rgba(11, 42, 46, 0.75); cursor: pointer; display: grid; place-items: center; }
+  .play:hover { border-color: var(--line-strong); }
+  .i-pause { width: 12px; height: 12px; border-left: 4px solid var(--foam); border-right: 4px solid var(--foam); box-sizing: border-box; }
+  .i-play { width: 0; height: 0; margin-left: 3px; border-left: 11px solid var(--foam); border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+  #lightbox { padding: 0; border: 0; background: transparent; width: min(1600px, 94vw); max-width: none; max-height: none; overflow: visible; cursor: zoom-out; }
+  #lightbox::backdrop { background: rgba(2, 10, 12, 0.9); }
+  #lightbox figure { margin: 0; }
+  #lightbox img { width: 100%; max-height: 86vh; object-fit: contain; border-radius: 12px; }
+  #lightbox figcaption { color: var(--foam); text-align: center; margin-top: 12px; font-size: 15px; }
+  #lightbox[open] { animation: zoom-in 0.38s cubic-bezier(0.22, 0.61, 0.24, 1); }
+  #lightbox[open]::backdrop { animation: fade-in 0.38s ease; }
+  #lightbox.is-closing { animation: zoom-out 0.28s ease forwards; }
+  #lightbox.is-closing::backdrop { animation: fade-out 0.28s ease forwards; }
+  @keyframes zoom-in { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: none; } }
+  @keyframes zoom-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: scale(0.82); } }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+
   /* how to show Korean */
   .howto { margin-top: 16px; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: rgba(11, 42, 46, 0.45); }
   .howto > p { color: var(--muted); }
@@ -244,6 +281,7 @@
 
   @media (max-width: 860px) {
     .about, .grid-2, .rules, .field-row { grid-template-columns: 1fr; }
+    .carousel { --slide: 88vw; --gap: 12px; }
     .about figure { display: none; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .foot { grid-template-columns: 1fr; }
@@ -267,6 +305,7 @@
     <a class="brand" href="#top">이세 인어 이야기 <span>한글 패치</span></a>
     <nav aria-label="페이지 목차">
       <a href="#about">소개</a>
+      <a href="#screens">적용 화면</a>
       <a href="#progress">진행 현황</a>
       <a href="#support">지원·설치</a>
       <a href="#policy">번역 기준</a>
@@ -324,6 +363,34 @@
         <figcaption>© SQUARE ENIX</figcaption>
       </figure>
     </div>
+  </section>
+
+  <section id="screens">
+    <div class="wrap">
+      <h2>적용 화면</h2>
+      <p class="lead">개발 중인 시험판(FONT-20261021-01)에서 찍은 화면입니다. 배포판에서는 글꼴과 표현이 달라질 수 있습니다. 이미지를 누르면 크게 보이고, 다시 누르면 돌아갑니다.</p>
+    </div>
+    <div class="carousel" id="carousel" aria-roledescription="캐러셀" aria-label="적용 화면">
+    <div class="viewport">
+      <ul class="track" id="track">
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="1 / 5: 타이틀 화면"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/title.webp" tabindex="-1"><img src="assets/paranormasight2/screens/title-960.webp" srcset="assets/paranormasight2/screens/title-960.webp 960w, assets/paranormasight2/screens/title.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" fetchpriority="high" alt="한국어 제목 ‘이세 인어 이야기’와 한국어 메뉴가 표시된 타이틀 화면"></button><p class="cap">타이틀 화면</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="2 / 5: 시작 안내 · 한글 패치 제작자 표기"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/warning.webp" tabindex="-1"><img src="assets/paranormasight2/screens/warning-960.webp" srcset="assets/paranormasight2/screens/warning-960.webp 960w, assets/paranormasight2/screens/warning.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어로 옮긴 시작 안내 문구와 분홍색 ‘한글 패치 제작자 : SAKURA’ 표기"></button><p class="cap">시작 안내 · 한글 패치 제작자 표기</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="3 / 5: 인물 목록"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/characters.webp" tabindex="-1"><img src="assets/paranormasight2/screens/characters-960.webp" srcset="assets/paranormasight2/screens/characters-960.webp 960w, assets/paranormasight2/screens/characters.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 인물 목록 화면에서 미나쿠치 유자의 소개를 연 모습"></button><p class="cap">인물 목록</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="4 / 5: 자료 · 카메시마루"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-kamessy.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-kamessy-960.webp" srcset="assets/paranormasight2/screens/document-kamessy-960.webp 960w, assets/paranormasight2/screens/document-kamessy.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 카메시마루 항목을 연 모습"></button><p class="cap">자료 · 카메시마루</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="5 / 5: 자료 · 카메시마 남해의 대재난"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-disaster.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-disaster-960.webp" srcset="assets/paranormasight2/screens/document-disaster-960.webp 960w, assets/paranormasight2/screens/document-disaster.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 카메시마 남해의 대재난 항목을 연 모습"></button><p class="cap">자료 · 카메시마 남해의 대재난</p></li>
+      </ul>
+    </div>
+    <div class="controls">
+      <div class="dots" id="dots">
+        <button type="button" class="pip" aria-label="타이틀 화면 보기"><span class="fill"></span></button>
+        <button type="button" class="pip" aria-label="시작 안내 · 한글 패치 제작자 표기 보기"><span class="fill"></span></button>
+        <button type="button" class="pip" aria-label="인물 목록 보기"><span class="fill"></span></button>
+        <button type="button" class="pip" aria-label="자료 · 카메시마루 보기"><span class="fill"></span></button>
+        <button type="button" class="pip" aria-label="자료 · 카메시마 남해의 대재난 보기"><span class="fill"></span></button>
+      </div>
+      <button type="button" class="play" id="play" aria-label="자동 넘김 일시 정지"><span class="i-pause" aria-hidden="true"></span></button>
+    </div>
+  </div>
   </section>
 
   <section id="progress">
@@ -517,7 +584,122 @@
   </div>
 </footer>
 
+<dialog id="lightbox" aria-label="스크린샷 크게 보기">
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+</dialog>
+
 <script>
+(function () {
+  var root = document.getElementById('carousel');
+  if (!root) return;
+  var track = document.getElementById('track');
+  var slides = Array.prototype.slice.call(track.children);
+  var dots = Array.prototype.slice.call(document.querySelectorAll('#dots .pip'));
+  var play = document.getElementById('play');
+  var box = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  var at = 0, paused = false, userPaused = false;
+
+  function place(instant) {
+    var viewport = track.parentNode.clientWidth;
+    var w = slides[at].offsetWidth;       // layout width, unaffected by the scale effect
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var x = (viewport - w) / 2 - at * (w + gap);
+    if (instant) track.style.transition = 'none';
+    track.style.transform = 'translateX(' + x + 'px)';
+    if (instant) { void track.offsetWidth; track.style.transition = ''; }
+  }
+
+  function go(i) {
+    at = (i + slides.length) % slides.length;
+    slides.forEach(function (s, k) {
+      s.classList.toggle('is-active', k === at);
+      s.querySelector('.slide-btn').tabIndex = k === at ? 0 : -1;
+    });
+    dots.forEach(function (d, k) {
+      d.classList.toggle('is-active', k === at);
+      d.setAttribute('aria-current', k === at ? 'true' : 'false');
+      fills[k].style.width = '0%';
+    });
+    startAt = performance.now();
+    if (paused) pausedAt = startAt;
+    schedule();
+    place();
+  }
+
+  // timer: the active pill fills up over DURATION, then the next slide comes in.
+  // The slide change is scheduled with a timeout; animation frames only draw the fill.
+  var DURATION = 5000, startAt = 0, pausedAt = 0, timer = 0;
+  var fills = dots.map(function (d) { return d.querySelector('.fill'); });
+  function remaining() { return DURATION - ((paused ? pausedAt : performance.now()) - startAt); }
+  function schedule() {
+    clearTimeout(timer);
+    if (!paused) timer = setTimeout(function () { go(at + 1); }, Math.max(0, remaining()));
+  }
+  function setPaused(p) {
+    if (p && !paused) pausedAt = performance.now();
+    if (!p && paused) startAt += performance.now() - pausedAt;
+    paused = p;
+    root.classList.toggle('is-paused', p);
+    schedule();
+  }
+  function tick() {
+    fills[at].style.width = (Math.min(Math.max(1 - remaining() / DURATION, 0), 1) * 100) + '%';
+    requestAnimationFrame(tick);
+  }
+
+  dots.forEach(function (d, k) {
+    d.addEventListener('click', function () { go(k); });
+  });
+
+  play.addEventListener('click', function () {
+    userPaused = !userPaused;
+    setPaused(userPaused);
+    play.innerHTML = userPaused ? '<span class="i-play" aria-hidden="true"></span>' : '<span class="i-pause" aria-hidden="true"></span>';
+    play.setAttribute('aria-label', userPaused ? '자동 넘김 다시 시작' : '자동 넘김 일시 정지');
+  });
+
+  slides.forEach(function (s, k) {
+    s.querySelector('.slide-btn').addEventListener('click', function () {
+      if (k !== at) { go(k); return; }
+      var btn = this;
+      lbImg.src = btn.getAttribute('data-full');
+      lbImg.alt = btn.querySelector('img').alt;
+      lbCap.textContent = s.querySelector('.cap').textContent;
+      setPaused(true);
+      if (typeof box.showModal === 'function') box.showModal(); else window.open(lbImg.src, '_blank');
+    });
+  });
+
+  function shrink() {
+    if (!box.open || box.classList.contains('is-closing')) return;
+    box.classList.add('is-closing');
+    setTimeout(function () {             // matches the 0.28s zoom-out animation
+      box.classList.remove('is-closing');
+      box.close();
+    }, 280);
+  }
+  box.addEventListener('click', shrink);
+  box.addEventListener('cancel', function (e) { e.preventDefault(); shrink(); });
+  box.addEventListener('close', function () { setPaused(userPaused); });
+
+  // swipe on touch screens
+  var sx = null;
+  track.addEventListener('pointerdown', function (e) { sx = e.clientX; });
+  track.addEventListener('pointerup', function (e) {
+    if (sx === null) return;
+    var dx = e.clientX - sx; sx = null;
+    if (Math.abs(dx) > 50) go(at + (dx < 0 ? 1 : -1));
+  });
+
+  document.addEventListener('visibilitychange', function () { setPaused(document.hidden || userPaused || box.open); });
+  window.addEventListener('resize', function () { place(true); });
+  go(0);
+  place(true);
+  requestAnimationFrame(tick);
+})();
+
 (function () {
   var REPO = 'https://github.com/deuxdoom/GameKoreanPatch/issues/new';
   var MAX_FILES = 4;
