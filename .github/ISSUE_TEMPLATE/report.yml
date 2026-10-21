@@ -1,0 +1,44 @@
+name: 한글 패치 문제 제보
+description: 오역, 어색한 표현, 글자 깨짐·잘림, 진행 문제를 알려 주세요.
+title: "[제보] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        이세 인어 이야기 한글 패치의 문제를 알려 주셔서 고맙습니다. 스크린샷이 있으면 훨씬 빠르게 확인할 수 있습니다.
+  - type: dropdown
+    id: type
+    attributes:
+      label: 문제 유형
+      options:
+        - 오역·어색한 표현
+        - 글자 깨짐·잘림
+        - 진행 불가·오류
+        - 그림 속 글자
+        - 기타
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: 패치 버전
+      description: 배포판 파일 이름이나 시작 화면에 표시된 버전을 적어 주세요.
+      placeholder: 예) 배포판 파일 이름의 버전
+  - type: input
+    id: scene
+    attributes:
+      label: 장면·상황
+      description: 문제가 나온 장면과 바로 전에 한 조작을 적어 주세요.
+      placeholder: 예) 항구에서 키쿠코와 대화하던 중
+  - type: textarea
+    id: description
+    attributes:
+      label: 설명
+      description: 무엇이 어떻게 보였는지, 어떻게 바뀌면 좋을지 적어 주세요. 원문이나 바른 표현을 알면 함께 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 스크린샷
+      description: 이미지를 이 칸에 끌어다 놓거나 Ctrl+V로 붙여 넣으세요.

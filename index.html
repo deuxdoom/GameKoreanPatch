@@ -54,7 +54,7 @@
   }
   a { color: var(--glow); text-underline-offset: 3px; }
   a:hover { color: var(--foam); }
-  img { max-width: 100%; display: block; }
+  img { max-width: 100%; height: auto; display: block; }
   .wrap { width: min(var(--wrap), 100% - 32px); margin-inline: auto; }
 
   /* top bar */
@@ -193,8 +193,57 @@
   footer .maker { color: var(--foam); font-weight: 700; }
   footer .maker b { color: #ff8fbf; }
 
+  /* how to show Korean */
+  .howto { margin-top: 16px; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: rgba(11, 42, 46, 0.45); }
+  .howto > p { color: var(--muted); }
+  .howto-steps { margin: 0 0 18px; padding-left: 1.3em; }
+  .howto-steps li { margin: 6px 0; }
+  .howto-steps li::marker { color: var(--glow); font-weight: 700; }
+  .shot { margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--line-strong); background: #171d25; }
+  .shot img { width: 100%; }
+  .shot figcaption { font-size: 13px; color: var(--muted); padding: 8px 12px; background: rgba(11, 42, 46, 0.8); }
+
+  /* report form */
+  .report { display: grid; gap: 16px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: grid; gap: 6px; }
+  .label { font-weight: 700; color: var(--foam); font-size: 15px; }
+  .label em { font-style: normal; font-size: 12px; color: var(--ember); margin-left: 6px; font-weight: 700; }
+  .label small { font-size: 12px; color: var(--muted); margin-left: 6px; font-weight: 400; }
+  .report input, .report select, .report textarea {
+    width: 100%; font: inherit; font-size: 15px; color: var(--foam);
+    background: rgba(4, 16, 18, 0.7); border: 1px solid var(--line-strong); border-radius: 10px; padding: 10px 12px;
+  }
+  .report textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+  .report input::placeholder, .report textarea::placeholder { color: #6f8f8a; }
+  .report input:focus, .report select:focus, .report textarea:focus, .drop:focus {
+    outline: 2px solid var(--glow); outline-offset: 1px; border-color: transparent;
+  }
+  .report select option { background: var(--sea); }
+  .report .invalid { border-color: var(--ember); }
+  .drop {
+    display: grid; gap: 4px; place-items: center; text-align: center; cursor: pointer;
+    border: 1.5px dashed var(--line-strong); border-radius: 12px; padding: 22px 16px; background: rgba(4, 16, 18, 0.45);
+  }
+  .drop b { color: var(--foam); }
+  .drop span { color: var(--muted); font-size: 14px; }
+  .drop.over { border-color: var(--glow); background: rgba(127, 216, 203, 0.08); }
+  .thumbs { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .thumbs:empty { display: none; }
+  .thumbs li { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: rgba(4, 16, 18, 0.6); }
+  .thumbs img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .thumbs .row { display: flex; gap: 6px; padding: 6px; }
+  .thumbs button { flex: 1; font: inherit; font-size: 13px; padding: 5px 0; border-radius: 8px; cursor: pointer; border: 1px solid var(--line-strong); color: var(--foam); background: rgba(127, 216, 203, 0.06); }
+  .thumbs button:hover { background: rgba(127, 216, 203, 0.16); }
+  .hint { font-size: 14px; color: var(--muted); margin: 0; }
+  kbd { font-family: inherit; font-size: 12px; border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; color: var(--foam); }
+  .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+  .form-actions .btn { cursor: pointer; font-family: inherit; }
+  .status { font-size: 14px; color: var(--glow); }
+  .status.warn { color: var(--sun); }
+
   @media (max-width: 860px) {
-    .about, .grid-2, .rules { grid-template-columns: 1fr; }
+    .about, .grid-2, .rules, .field-row { grid-template-columns: 1fr; }
     .about figure { display: none; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .foot { grid-template-columns: 1fr; }
@@ -230,9 +279,8 @@
 <main id="top">
   <div class="hero">
     <picture>
-      <source media="(max-width: 640px)" srcset="assets/paranormasight2/keyart-portrait.webp">
-      <source media="(max-width: 1100px)" srcset="assets/paranormasight2/keyart-wide-960.webp">
-      <img src="assets/paranormasight2/keyart-wide.webp" width="1920" height="1080" alt="PARANORMASIGHT: The Mermaid's Curse 키 아트. 바닷속에서 인어와 카메시마 사람들이 모여 있다.">
+      <source media="(max-width: 640px)" srcset="assets/paranormasight2/keyart-portrait.webp 800w, assets/paranormasight2/keyart-portrait-1200.webp 1200w" sizes="100vw" width="1200" height="1800">
+      <img src="assets/paranormasight2/keyart-wide.webp" srcset="assets/paranormasight2/keyart-wide-960.webp 960w, assets/paranormasight2/keyart-wide.webp 1920w" sizes="100vw" width="1920" height="1080" alt="PARANORMASIGHT: The Mermaid's Curse 키 아트. 바닷속에서 인어와 카메시마 사람들이 모여 있다.">
     </picture>
   </div>
 
@@ -272,7 +320,7 @@
         <p>이 패치는 일본어 원문을 기준으로 대사, 선택지, 자료, 메뉴, 인물 소개, 스태프 크레디트를 한국어로 옮깁니다. 게임의 일본어 언어 설정 자리에 한국어가 표시되는 방식입니다.</p>
       </div>
       <figure>
-        <img src="assets/paranormasight2/keyart-portrait.webp" width="800" height="1200" loading="lazy" alt="PARANORMASIGHT: The Mermaid's Curse 세로형 키 아트">
+        <img src="assets/paranormasight2/keyart-portrait.webp" srcset="assets/paranormasight2/keyart-portrait.webp 800w, assets/paranormasight2/keyart-portrait-1200.webp 1200w" sizes="280px" width="800" height="1200" loading="lazy" alt="PARANORMASIGHT: The Mermaid's Curse 세로형 키 아트">
         <figcaption>© SQUARE ENIX</figcaption>
       </figure>
     </div>
@@ -319,7 +367,19 @@
           </ul>
         </div>
       </div>
-      <p class="tip">설치한 뒤에는 평소처럼 Steam에서 게임을 실행하고, 게임 설정의 언어를 <b>日本語(일본어)</b>로 두면 한국어가 표시됩니다.</p>
+      <div class="howto">
+        <h3>한국어로 표시하기</h3>
+        <p>이 패치는 게임의 일본어 자리에 한국어를 표시합니다. 설치한 뒤 Steam에서 게임 언어를 일본어로 맞춰 주세요.</p>
+        <ol class="howto-steps">
+          <li>Steam 라이브러리에서 게임을 마우스 오른쪽 버튼으로 누르고 <b>속성</b>을 엽니다.</li>
+          <li>왼쪽 메뉴에서 <b>일반</b>을 고릅니다.</li>
+          <li><b>언어</b>를 <b>日本語(일본어)</b>로 바꾼 뒤 게임을 실행합니다.</li>
+        </ol>
+        <figure class="shot">
+          <img src="assets/paranormasight2/steam-language-japanese.png" width="1263" height="260" loading="lazy" alt="Steam 게임 속성의 일반 화면. 언어 항목에서 日本語(일본어)를 고른 모습">
+          <figcaption>Steam 게임 속성 → 일반 → 언어 → 日本語(일본어)</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -397,15 +457,47 @@
   <section id="report">
     <div class="wrap">
       <h2>문제 제보</h2>
-      <p class="lead">오역, 어색한 표현, 글자 잘림, 진행 문제를 알려 주세요.</p>
-      <div class="card">
-        <p><a href="https://github.com/deuxdoom/GameKoreanPatch/issues">GitHub Issues</a>에 다음 내용을 함께 적어 주시면 빠르게 확인할 수 있습니다.</p>
-        <ul>
-          <li>패치 버전 (시작 화면이나 배포판 이름)</li>
-          <li>문제가 나온 장면과 바로 전에 한 조작</li>
-          <li>화면 스크린샷</li>
-        </ul>
-      </div>
+      <p class="lead">오역, 어색한 표현, 글자 잘림, 진행 문제를 알려 주세요. 작성한 내용은 <a href="https://github.com/deuxdoom/GameKoreanPatch/issues">GitHub Issues</a> 제보 양식에 채워져 열립니다.</p>
+      <form class="card report" id="report-form" novalidate>
+        <div class="field-row">
+          <label class="field">
+            <span class="label">문제 유형</span>
+            <select id="r-type">
+              <option>오역·어색한 표현</option>
+              <option>글자 깨짐·잘림</option>
+              <option>진행 불가·오류</option>
+              <option>그림 속 글자</option>
+              <option>기타</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="label">패치 버전</span>
+            <input id="r-version" type="text" maxlength="60" placeholder="예: 배포판 파일 이름의 버전">
+          </label>
+        </div>
+        <label class="field">
+          <span class="label">장면·상황</span>
+          <input id="r-scene" type="text" maxlength="120" placeholder="예: 항구에서 키쿠코와 대화하던 중">
+        </label>
+        <label class="field">
+          <span class="label">설명 <em>필수</em></span>
+          <textarea id="r-desc" rows="5" maxlength="3000" required placeholder="무엇이 어떻게 보였는지, 어떻게 바뀌면 좋을지 적어 주세요. 원문이나 바른 표현을 알면 함께 적어 주세요."></textarea>
+        </label>
+        <div class="field">
+          <span class="label">스크린샷 <small>최대 4장</small></span>
+          <div class="drop" id="r-drop" tabindex="0" role="button" aria-describedby="r-drop-help">
+            <input id="r-files" type="file" accept="image/*" multiple hidden>
+            <b>이미지를 끌어다 놓거나 눌러서 고르세요</b>
+            <span id="r-drop-help">Ctrl+V로 붙여 넣을 수도 있습니다.</span>
+          </div>
+          <ul class="thumbs" id="r-thumbs" aria-live="polite"></ul>
+        </div>
+        <p class="hint">이미지는 이 페이지에서 GitHub로 바로 전송되지 않습니다. 제보 버튼을 누르면 첫 번째 스크린샷이 클립보드에 복사되니, 열린 GitHub 화면의 <b>스크린샷</b> 칸에 <kbd>Ctrl</kbd>+<kbd>V</kbd>로 붙여 넣어 주세요. 나머지 이미지는 각 미리보기의 <b>복사</b> 버튼으로 하나씩 붙여 넣으면 됩니다. 제보하려면 GitHub 로그인이 필요합니다.</p>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">GitHub Issues로 제보하기</button>
+          <span class="status" id="r-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
     </div>
   </section>
 </main>
@@ -425,5 +517,139 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var REPO = 'https://github.com/deuxdoom/GameKoreanPatch/issues/new';
+  var MAX_FILES = 4;
+  var MAX_URL = 7000;
+  var form = document.getElementById('report-form');
+  if (!form) return;
+  var drop = document.getElementById('r-drop');
+  var input = document.getElementById('r-files');
+  var thumbs = document.getElementById('r-thumbs');
+  var status = document.getElementById('r-status');
+  var desc = document.getElementById('r-desc');
+  var files = [];
+
+  function say(text, warn, link) {
+    status.textContent = text;
+    status.classList.toggle('warn', !!warn);
+    if (link) {
+      var a = document.createElement('a');
+      a.href = link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = ' GitHub 제보 화면 열기';
+      status.appendChild(a);
+    }
+  }
+
+  function addFiles(list) {
+    var skipped = false;
+    Array.prototype.forEach.call(list, function (f) {
+      if (!f.type || f.type.indexOf('image/') !== 0) return;
+      if (files.length >= MAX_FILES) { skipped = true; return; }
+      files.push(f);
+    });
+    render();
+    if (skipped) say('스크린샷은 최대 ' + MAX_FILES + '장까지 첨부할 수 있습니다.', true);
+  }
+
+  function render() {
+    thumbs.querySelectorAll('img').forEach(function (img) { URL.revokeObjectURL(img.src); });
+    thumbs.innerHTML = '';
+    files.forEach(function (f, i) {
+      var li = document.createElement('li');
+      var img = document.createElement('img');
+      img.src = URL.createObjectURL(f);
+      img.alt = '첨부한 스크린샷 ' + (i + 1);
+      var row = document.createElement('div');
+      row.className = 'row';
+      var copy = document.createElement('button');
+      copy.type = 'button'; copy.textContent = '복사';
+      copy.addEventListener('click', function () {
+        copyImage(f).then(function () { say('스크린샷 ' + (i + 1) + '을 복사했습니다. GitHub 화면에 Ctrl+V로 붙여 넣으세요.'); },
+                          function () { say('이 브라우저에서는 이미지 복사가 안 됩니다. 이미지 파일을 GitHub 화면으로 끌어다 놓아 주세요.', true); });
+      });
+      var del = document.createElement('button');
+      del.type = 'button'; del.textContent = '삭제';
+      del.addEventListener('click', function () { files.splice(i, 1); render(); });
+      row.appendChild(copy); row.appendChild(del);
+      li.appendChild(img); li.appendChild(row);
+      thumbs.appendChild(li);
+    });
+  }
+
+  function toPng(file) {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      img.onload = function () {
+        var c = document.createElement('canvas');
+        c.width = img.naturalWidth; c.height = img.naturalHeight;
+        c.getContext('2d').drawImage(img, 0, 0);
+        URL.revokeObjectURL(img.src);
+        c.toBlob(function (b) { b ? resolve(b) : reject(new Error('png')); }, 'image/png');
+      };
+      img.onerror = reject;
+      img.src = URL.createObjectURL(file);
+    });
+  }
+
+  function copyImage(file) {
+    if (!window.ClipboardItem || !navigator.clipboard || !navigator.clipboard.write) return Promise.reject(new Error('clipboard'));
+    return navigator.clipboard.write([new ClipboardItem({ 'image/png': toPng(file) })]);
+  }
+
+  drop.addEventListener('click', function () { input.click(); });
+  drop.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
+  input.addEventListener('change', function () { addFiles(input.files); input.value = ''; });
+  ['dragenter', 'dragover'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+  ['dragleave', 'drop'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.remove('over'); }); });
+  drop.addEventListener('drop', function (e) { if (e.dataTransfer) addFiles(e.dataTransfer.files); });
+  form.addEventListener('paste', function (e) {
+    var items = (e.clipboardData && e.clipboardData.files) || [];
+    if (items.length) { e.preventDefault(); addFiles(items); }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var type = document.getElementById('r-type').value;
+    var version = document.getElementById('r-version').value.trim();
+    var scene = document.getElementById('r-scene').value.trim();
+    var text = desc.value.trim();
+    desc.classList.toggle('invalid', !text);
+    if (!text) { say('설명을 적어 주세요.', true); desc.focus(); return; }
+
+    var summary = (scene || text.split('\n')[0]).slice(0, 60);
+    var params = new URLSearchParams();
+    params.set('template', 'report.yml');
+    params.set('title', '[' + type + '] ' + summary);
+    if (version) params.set('version', version);
+    if (scene) params.set('scene', scene);
+    params.set('description', text);
+    var url = REPO + '?' + params.toString();
+    var cut = false;
+    while (url.length > MAX_URL && text.length > 200) {
+      text = text.slice(0, Math.floor(text.length * 0.8));
+      params.set('description', text + '\n\n(내용이 길어 일부가 잘렸습니다. 이어서 적어 주세요.)');
+      url = REPO + '?' + params.toString();
+      cut = true;
+    }
+
+    function open() {
+      var w = window.open(url, '_blank');
+      if (w) { w.opener = null; } else { say('팝업이 차단되었습니다.', true, url); return false; }
+      return true;
+    }
+
+    if (files.length) {
+      copyImage(files[0]).then(function () {
+        if (open()) say('첫 번째 스크린샷을 복사했습니다. 열린 GitHub 화면의 스크린샷 칸에 Ctrl+V로 붙여 넣으세요.' + (cut ? ' 설명 일부가 잘렸으니 이어서 적어 주세요.' : ''));
+      }, function () {
+        if (open()) say('이미지를 자동으로 복사하지 못했습니다. 이미지 파일을 GitHub 화면의 스크린샷 칸으로 끌어다 놓아 주세요.', true);
+      });
+    } else if (open()) {
+      say('GitHub 제보 화면을 열었습니다.' + (cut ? ' 설명 일부가 잘렸으니 이어서 적어 주세요.' : ''));
+    }
+  });
+})();
+</script>
 </body>
 </html>
