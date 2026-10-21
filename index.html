@@ -538,14 +538,10 @@
             </select>
           </label>
           <label class="field">
-            <span class="label">패치 버전</span>
-            <input id="r-version" type="text" maxlength="60" placeholder="예: 배포판 파일 이름의 버전">
+            <span class="label">장면·상황</span>
+            <input id="r-scene" type="text" maxlength="120" placeholder="예: 항구에서 키쿠코와 대화하던 중">
           </label>
         </div>
-        <label class="field">
-          <span class="label">장면·상황</span>
-          <input id="r-scene" type="text" maxlength="120" placeholder="예: 항구에서 키쿠코와 대화하던 중">
-        </label>
         <label class="field">
           <span class="label">설명 <em>필수</em></span>
           <textarea id="r-desc" rows="5" maxlength="3000" required placeholder="무엇이 어떻게 보였는지, 어떻게 바뀌면 좋을지 적어 주세요. 원문이나 바른 표현을 알면 함께 적어 주세요."></textarea>
@@ -793,7 +789,6 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var type = document.getElementById('r-type').value;
-    var version = document.getElementById('r-version').value.trim();
     var scene = document.getElementById('r-scene').value.trim();
     var text = desc.value.trim();
     desc.classList.toggle('invalid', !text);
@@ -802,7 +797,6 @@
     var summary = (scene || text.split('\n')[0]).slice(0, 60);
     function body(t, cutNote) {
       return '### 문제 유형\n' + type +
-        '\n\n### 패치 버전\n' + (version || '(미기재)') +
         '\n\n### 장면·상황\n' + (scene || '(미기재)') +
         '\n\n### 설명\n' + t + (cutNote ? '\n\n(내용이 길어 일부가 잘렸습니다. 이어서 적어 주세요.)' : '') +
         '\n\n### 스크린샷\n(이 아래에 스크린샷을 붙여 넣거나 끌어다 놓아 주세요)\n';
