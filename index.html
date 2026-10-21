@@ -413,13 +413,13 @@
 
     <div class="notice" role="note">
       <div class="dot" aria-hidden="true"></div>
-      <p><strong>공개 테스트판을 배포합니다.</strong> 아래 <b>테스트판 내려받기</b> 버튼으로 바로 받을 수 있습니다. 압축을 풀어 게임 폴더에 덮어쓰는 방식이며, 자세한 방법은 <a href="#support">설치 방법</a>을 확인해 주세요. 설치 프로그램은 이 테스트판으로 많은 분의 확인과 제보를 받아 문제를 고친 뒤에 만들 예정입니다.</p>
+      <p><strong>정식 v1.0.0을 배포합니다.</strong> 아래 버튼에서 설치 프로그램을 내려받아 실행해 주세요. 게임 폴더를 선택하면 설치되며 덮어쓰는 파일은 <code>.bak</code>으로 보존합니다. 자세한 방법은 <a href="#support">설치 방법</a>을 확인해 주세요.</p>
     </div>
 
     <div class="actions">
-      <a class="btn primary" href="https://github.com/deuxdoom/GameKoreanPatch/releases/download/Test/PARANORMASIGHT2_KR_TestVer.zip" download>
+      <a class="btn primary" href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg>
-        테스트판 내려받기
+        v1.0.0 설치 프로그램
       </a>
       <a class="btn" href="#support">설치 방법</a>
       <a class="btn" href="https://github.com/deuxdoom/GameKoreanPatch">
@@ -560,17 +560,17 @@
         <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>이미지 한글화</h3><p>진행에 필요한 타이틀·안내·자료의 핵심 이미지 14종 한글화·검수, 인물 소개 이름 19곳</p></div><span class="chip">완료</span></li>
         <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>한국어 입력</h3><p>이름·단서 입력 8곳에 한국어 정답 35개 연결, 실제 게임에서 한국어 키보드 입력 확인</p></div><span class="chip">완료</span></li>
         <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>글꼴 결정</h3><p>대사·메뉴, 인물 이름, 자료, 타이틀별 글꼴 확정</p></div><span class="chip">완료</span></li>
-        <li class="step doing"><span class="mark" aria-hidden="true">6</span><div><h3>공개 테스트판 배포·실행 확인</h3><p>공개 테스트판을 배포하고, 플레이하며 보내 주신 제보로 문제 수정</p></div><span class="chip">진행 중</span></li>
-        <li class="step todo"><span class="mark" aria-hidden="true">7</span><div><h3>배포용 설치 프로그램</h3><p>테스트판으로 문제를 고친 뒤 제작, 백업·복구·제거 지원</p></div><span class="chip">대기</span></li>
+        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>정식 v1.0.0 배포</h3><p>자료 배치·이름 표시·용어 제보 반영, 후속 제보 접수</p></div><span class="chip">배포</span></li>
+        <li class="step done"><span class="mark" aria-hidden="true">7</span><div><h3>배포용 설치 프로그램</h3><p>게임 폴더 선택·기본 설치, .bak 백업과 제거 시 복원</p></div><span class="chip">완료</span></li>
       </ol>
-      <p class="footnote">지금은 공개 테스트판으로 제보를 받아 고치는 단계입니다. 설치 프로그램은 그다음에 만듭니다.</p>
+      <p class="footnote">정식 v1.0.0 설치 프로그램을 제공합니다. 게임 실행 중 발견한 문제는 계속 제보해 주세요.</p>
     </div>
   </section>
 
   <section id="support">
     <div class="wrap">
       <h2>지원 환경과 설치</h2>
-      <p class="lead">공개 테스트판은 Windows용 Steam판을 대상으로 합니다.</p>
+      <p class="lead">정식 v1.0.0은 Windows용 Steam판을 대상으로 합니다.</p>
       <div class="grid-2">
         <div class="card">
           <h3>지원 환경</h3>
@@ -585,20 +585,19 @@
           <h3>되돌리기</h3>
           <ul>
             <li>Steam 라이브러리에서 게임의 <b>속성 → 설치된 파일 → 게임 파일 무결성 확인</b>을 실행하면 원래 파일로 돌아갑니다.</li>
-            <li>설치 전에 백업해 둔 파일이 있다면, 같은 위치에 다시 덮어써도 됩니다.</li>
-            <li>설치 프로그램(자동 백업·복구·제거)은 테스트판으로 문제를 고친 뒤 제공할 예정입니다.</li>
+            <li>Windows 설정의 설치된 앱에서 <b>파라노마사이트 FILE38 한국어 패치 v1.0.0 (SAKURA)</b>를 제거하면 패치 파일을 지우고 <code>.bak</code>을 원래 이름으로 복원합니다.</li>
+            <li>수동 패치가 적용된 상태에서 설치했다면 그 상태로 돌아갑니다. 재설치해도 최초 백업을 유지합니다.</li>
           </ul>
         </div>
       </div>
       <div class="howto">
         <h3>설치 방법</h3>
-        <p>이 패치는 게임의 일본어 자리에 한국어를 표시합니다. 먼저 Steam에서 게임 언어를 일본어로 맞춘 뒤 패치 파일을 덮어써 주세요.</p>
+        <p>게임을 종료하고 Steam 언어를 日本語(일본어)로 설정해 주세요.</p>
         <ol class="howto-steps">
-          <li>Steam 라이브러리에서 게임을 마우스 오른쪽 버튼으로 누르고 <b>속성</b>을 엽니다.</li>
-          <li>왼쪽 메뉴의 <b>일반</b>에서 <b>언어</b>를 <b>日本語(일본어)</b>로 바꿉니다. 언어를 바꾼 뒤 내려받기가 시작되면 끝날 때까지 기다립니다.</li>
-          <li><a href="https://github.com/deuxdoom/GameKoreanPatch/releases/download/Test/PARANORMASIGHT2_KR_TestVer.zip" download>PARANORMASIGHT2_KR_TestVer.zip</a>을 내려받아 압축을 풉니다.</li>
-          <li>게임을 종료한 상태에서 Steam의 <b>속성 → 설치된 파일 → 찾아보기</b>로 게임 폴더를 엽니다.</li>
-          <li>압축을 푼 폴더의 <b>GameAssembly.dll</b>과 <b>PARANORMASIGHT_2_Data</b> 폴더를 게임 폴더에 복사해 덮어쓴 뒤 게임을 실행합니다.</li>
+          <li>Steam 게임 <b>속성 → 일반 → 언어</b>를 <b>日本語(일본어)</b>로 바꾸고 내려받기가 끝날 때까지 기다립니다.</li>
+          <li><a href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe" download>PARANORMASIGHT2_KR_v1.0.0_Setup.exe</a>를 실행하고 설치 확인에 동의합니다.</li>
+          <li>기본 경로는 <code>C:\Program Files (x86)\Steam\steamapps\common\PARANORMASIGHT_2</code>입니다. 다른 위치라면 <b>찾아보기</b>로 게임 폴더를 선택합니다.</li>
+          <li>설치가 끝나면 <b>완료</b>를 눌러 닫고 게임을 실행합니다.</li>
         </ol>
         <figure class="shot">
           <img src="assets/paranormasight2/steam-language-japanese.png" width="1263" height="260" loading="lazy" alt="Steam 게임 속성의 일반 화면. 언어 항목에서 日本語(일본어)를 고른 모습">
@@ -644,11 +643,11 @@
       <p class="lead">패치를 쓰기 전에 알아 두면 좋은 내용입니다.</p>
       <details>
         <summary>어디서 내려받나요?</summary>
-        <div><p>위의 <b>테스트판 내려받기</b> 버튼이나 <a href="https://github.com/deuxdoom/GameKoreanPatch/releases">GitHub Releases</a>에서 내려받을 수 있습니다. 지금은 공개 테스트판이며, 많은 분의 확인과 제보로 문제를 고친 뒤 설치 프로그램을 만들 예정입니다.</p></div>
+        <div><p>위의 <b>v1.0.0 설치 프로그램</b> 버튼이나 <a href="https://github.com/deuxdoom/GameKoreanPatch/releases">GitHub Releases</a>에서 내려받을 수 있습니다. 정식 v1.0.0 설치 프로그램을 제공합니다.</p></div>
       </details>
       <details>
         <summary>패치를 지우고 원래대로 되돌리고 싶어요.</summary>
-        <div><p>Steam 라이브러리에서 게임의 <b>속성 → 설치된 파일 → 게임 파일 무결성 확인</b>을 실행하면 원래 파일로 돌아갑니다.</p></div>
+        <div><p>Windows 설정의 설치된 앱에서 이 한국어 패치를 제거하면 <code>.bak</code>을 설치 직전 파일로 복원합니다. 수동 패치 이전의 게임 원본이 필요하면 Steam의 <b>게임 파일 무결성 확인</b>을 이용해 주세요.</p></div>
       </details>
       <details>
         <summary>Switch나 모바일판에서도 쓸 수 있나요?</summary>
@@ -660,7 +659,7 @@
       </details>
       <details>
         <summary>자료 화면의 줄바꿈이 어색한 곳이 있어요.</summary>
-        <div><p>자료 화면의 글을 한국어 문장에 맞게 줄바꿈·문단 나눔하는 작업이 도중에 멈춘 상태로 공개 테스트판에 들어갔습니다. 일부 자료에서 줄이 어색하게 나뉘거나 문단 구분이 원문과 다를 수 있습니다. 해당 자료 이름과 스크린샷을 제보해 주시면 다음 판에서 고치겠습니다.</p></div>
+        <div><p>자료의 문장 흐름과 제보된 그림·출처 배치를 수정했습니다. 최신 수정 화면의 추가 확인과 전체 분기 플레이 검증은 계속 수집합니다. 어색한 줄바꿈이나 진행 문제는 자료 이름·장면과 함께 제보해 주세요.</p></div>
       </details>
       <details>
         <summary>그림 속 일본어가 일부 남아 있어요.</summary>

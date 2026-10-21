@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/download/Test/PARANORMASIGHT2_KR_TestVer.zip"><img src="assets/paranormasight2/button-download.png" alt="테스트판 내려받기 (PARANORMASIGHT2_KR_TestVer.zip)" width="320"></a>
+  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="정식 v1.0.0 설치 프로그램 내려받기" width="320"></a>
   <a href="https://deuxdoom.github.io/GameKoreanPatch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a><br>
-  <sub>PARANORMASIGHT2_KR_TestVer.zip · 약 197MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
+  <sub>PARANORMASIGHT2_KR_v1.0.0_Setup.exe · 약 187MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
 </p>
 
 <p align="center">
@@ -35,7 +35,7 @@
 > → [소개 페이지 제보 폼](https://deuxdoom.github.io/GameKoreanPatch/#report) · [GitHub Issues](https://github.com/deuxdoom/GameKoreanPatch/issues/new)
 
 > [!IMPORTANT]
-> **공개 테스트판을 배포합니다.** 위의 **테스트판 내려받기** 버튼이나 [GitHub Releases](https://github.com/deuxdoom/GameKoreanPatch/releases)에서 내려받을 수 있습니다. 압축을 풀어 게임 폴더에 덮어쓰는 방식이며, 자세한 방법은 [설치와 사용](#설치와-사용)을 확인해 주세요. 설치 프로그램은 이 테스트판으로 많은 분의 확인과 제보를 받아 문제를 고친 뒤에 만들 예정입니다.
+> **정식 v1.0.0을 배포합니다.** 위 버튼에서 설치 프로그램을 내려받아 실행해 주세요. 게임 폴더를 선택하면 설치되며, 덮어쓰는 파일은 `.bak`으로 보존합니다. 제거하면 설치 직전 파일로 복원합니다. 자세한 방법은 [설치와 사용](#설치와-사용)을 확인해 주세요.
 
 ## 소개
 
@@ -124,8 +124,8 @@
 | 이미지 한글화 | ✅ **완료** | 진행에 필요한 타이틀·안내·자료의 핵심 이미지 14종 한글화·검수, 인물 소개 이름 19곳 |
 | 한국어 입력 | ✅ **완료** | 이름·단서 입력 8곳에 한국어 정답 35개 연결, 실제 게임에서 한국어 키보드 입력 확인 |
 | 글꼴 결정 | ✅ **완료** | 대사·메뉴, 인물 이름, 자료, 타이틀별 글꼴 확정 |
-| 공개 테스트판 배포·실행 확인 | 🔄 진행 중 | 공개 테스트판을 배포하고, 플레이하며 보내 주신 제보로 문제 수정 |
-| 배포용 설치 프로그램 | ⬜ 대기 | 테스트판으로 문제를 고친 뒤 제작, 백업·복구·제거 지원 |
+| 정식 릴리스·사용자 제보 | ✅ v1.0.0 배포 | 제보된 자료 배치·이름 표시·용어 문제를 반영, 후속 제보 접수 |
+| 배포용 설치 프로그램 | ✅ 완료 | 게임 폴더 선택·기본 설치, .bak 백업과 제거 시 복원 |
 
 
 ## 지원 환경
@@ -137,13 +137,12 @@
 
 ## 설치와 사용
 
-지금 배포하는 공개 테스트판은 압축을 풀어 게임 폴더에 덮어쓰는 방식입니다. 이 패치는 게임의 일본어 자리에 한국어를 표시하므로, 먼저 Steam에서 게임 언어를 일본어로 맞춘 뒤 패치 파일을 덮어써 주세요.
+정식 v1.0.0은 설치 EXE 하나로 제공합니다. 게임의 일본어 자리에 한국어를 표시합니다.
 
-1. Steam 라이브러리에서 게임을 마우스 오른쪽 버튼으로 누르고 **속성**을 엽니다.
-2. 왼쪽 메뉴의 **일반**에서 **언어**를 **日本語(일본어)** 로 바꿉니다. 언어를 바꾼 뒤 내려받기가 시작되면 끝날 때까지 기다립니다.
-3. [PARANORMASIGHT2_KR_TestVer.zip](https://github.com/deuxdoom/GameKoreanPatch/releases/download/Test/PARANORMASIGHT2_KR_TestVer.zip)을 내려받아 압축을 풉니다.
-4. 게임을 종료한 상태에서 Steam의 **속성 → 설치된 파일 → 찾아보기**로 게임 폴더를 엽니다.
-5. 압축을 푼 폴더의 **GameAssembly.dll**과 **PARANORMASIGHT_2_Data** 폴더를 게임 폴더에 복사해 덮어쓴 뒤 게임을 실행합니다.
+1. 게임을 종료하고 Steam 게임 **속성 → 일반 → 언어**를 **日本語(일본어)** 로 설정합니다. 내려받기가 시작되면 완료될 때까지 기다립니다.
+2. [PARANORMASIGHT2_KR_v1.0.0_Setup.exe](https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe)를 실행하고 설치 확인에 동의합니다.
+3. 기본 경로는 `C:\Program Files (x86)\Steam\steamapps\common\PARANORMASIGHT_2`입니다. 다른 위치에 설치했다면 **찾아보기**로 실제 게임 폴더를 선택합니다.
+4. 설치가 끝나면 **완료**를 눌러 닫고 게임을 실행합니다.
 
 <p align="center">
   <img src="assets/paranormasight2/steam-language-japanese.png" alt="Steam 게임 속성의 일반 화면. 언어 항목에서 日本語(일본어)를 고른 모습" width="100%">
@@ -151,9 +150,12 @@
 
 ### 되돌리기
 
-- Steam 라이브러리에서 게임의 **속성 → 설치된 파일 → 게임 파일 무결성 확인**을 실행하면 원래 파일로 돌아갑니다.
-- 설치 전에 백업해 둔 파일이 있다면, 같은 위치에 다시 덮어써도 됩니다.
-- 설치 프로그램(자동 백업·복구·제거)은 테스트판으로 문제를 고친 뒤 제공할 예정입니다.
+- Windows **설정 → 앱 → 설치된 앱**에서 **파라노마사이트 FILE38 한국어 패치 v1.0.0 (SAKURA)** 를 제거합니다.
+- 설치 목록이 없어도 게임 폴더의 `unins000.exe`를 실행해 `.bak`으로 복원할 수 있습니다. 이전 설치 파일에서 제거 오류가 났다면 새 Setup을 한 번 실행해 제거기를 갱신해 주세요.
+- 덮어쓴 파일은 같은 위치의 `파일명.bak`으로 보관합니다. 제거하면 패치 파일을 지우고 백업을 원래 이름으로 복원합니다. 재설치해도 최초 백업을 유지합니다.
+- 기존 `.bak`이 있으면 덮어쓰지 않고 그 백업을 유지합니다.
+- 설치 전에 수동 패치가 적용되어 있었다면 그 상태로 돌아갑니다. 게임의 원본으로 되돌리려면 Steam **속성 → 설치된 파일 → 게임 파일 무결성 확인**을 이용합니다.
+- 설치 후 다른 업데이트·패치가 파일을 바꾼 경우 확인 없이 덮어쓰지 않습니다. 백업이 없거나 손상되면 복원 성공으로 처리하지 않습니다.
 
 > [!NOTE]
 > Steam의 **게임 파일 무결성 확인**이나 게임 업데이트가 패치한 파일을 원래대로 되돌릴 수 있습니다. 게임이 업데이트되면 새 판본을 지원하는 패치가 나올 때까지 기다려 주세요.
@@ -182,7 +184,7 @@
 ## 알려진 제한
 
 - 그림 속 작은 글씨와 장식 문자는 원문 그대로 남아 있습니다.
-- 자료 화면의 글을 한국어 문장에 맞게 줄바꿈·문단 나눔하는 작업이 도중에 멈춘 상태로 공개 테스트판에 들어갔습니다. 일부 자료에서 줄이 어색하게 나뉘거나 문단 구분이 원문과 다를 수 있습니다. 발견하면 제보해 주세요.
+- 자료의 문장 흐름과 제보된 그림·출처 배치를 수정했습니다. 최신 수정 화면의 추가 확인과 전체 분기 플레이 검증은 계속 수집합니다. 어색한 줄바꿈이나 진행 문제를 발견하면 제보해 주세요.
 
 ## 문제 제보
 
