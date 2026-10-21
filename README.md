@@ -10,11 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://deuxdoom.github.io/GameKoreanPatch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest"><b>⬇ 최신판 내려받기 (GitHub Releases)</b></a>
+  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/download/Test/PARANORMASIGHT2_KR_TestVer.zip"><img src="assets/paranormasight2/button-download.png" alt="테스트판 내려받기 (PARANORMASIGHT2_KR_TestVer.zip)" width="320"></a>
+  <a href="https://deuxdoom.github.io/GameKoreanPatch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a><br>
+  <sub>PARANORMASIGHT2_KR_TestVer.zip · 약 197MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
 </p>
 
 <p align="center">
@@ -37,7 +35,7 @@
 > → [소개 페이지 제보 폼](https://deuxdoom.github.io/GameKoreanPatch/#report) · [GitHub Issues](https://github.com/deuxdoom/GameKoreanPatch/issues/new)
 
 > [!IMPORTANT]
-> **공개 테스트판을 배포합니다.** 최신판은 [GitHub Releases](https://github.com/deuxdoom/GameKoreanPatch/releases/latest)에서 내려받을 수 있습니다. 압축을 풀어 게임 폴더에 덮어쓰는 방식이며, 자세한 방법은 [설치와 사용](#설치와-사용)을 확인해 주세요. 설치 프로그램은 이 테스트판으로 많은 분의 확인과 제보를 받아 문제를 고친 뒤에 만들 예정입니다.
+> **공개 테스트판을 배포합니다.** 위의 **테스트판 내려받기** 버튼이나 [GitHub Releases](https://github.com/deuxdoom/GameKoreanPatch/releases)에서 내려받을 수 있습니다. 압축을 풀어 게임 폴더에 덮어쓰는 방식이며, 자세한 방법은 [설치와 사용](#설치와-사용)을 확인해 주세요. 설치 프로그램은 이 테스트판으로 많은 분의 확인과 제보를 받아 문제를 고친 뒤에 만들 예정입니다.
 
 ## 소개
 
@@ -143,7 +141,7 @@
 
 1. Steam 라이브러리에서 게임을 마우스 오른쪽 버튼으로 누르고 **속성**을 엽니다.
 2. 왼쪽 메뉴의 **일반**에서 **언어**를 **日本語(일본어)** 로 바꿉니다. 언어를 바꾼 뒤 내려받기가 시작되면 끝날 때까지 기다립니다.
-3. [GitHub Releases](https://github.com/deuxdoom/GameKoreanPatch/releases/latest)에서 최신판 ZIP을 내려받아 압축을 풉니다.
+3. [PARANORMASIGHT2_KR_TestVer.zip](https://github.com/deuxdoom/GameKoreanPatch/releases/download/Test/PARANORMASIGHT2_KR_TestVer.zip)을 내려받아 압축을 풉니다.
 4. 게임을 종료한 상태에서 Steam의 **속성 → 설치된 파일 → 찾아보기**로 게임 폴더를 엽니다.
 5. 압축을 푼 폴더의 **GameAssembly.dll**과 **PARANORMASIGHT_2_Data** 폴더를 게임 폴더에 복사해 덮어쓴 뒤 게임을 실행합니다.
 
