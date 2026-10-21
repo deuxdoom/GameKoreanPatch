@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이세 인어 이야기 한글 패치</title>
+<meta name="description" content="파라노마사이트 FILE38: 이세 인어 이야기(PARANORMASIGHT: The Mermaid's Curse) 비공식 한글 패치. 진행 현황, 지원 환경, 설치 안내, 번역 기준.">
+<meta name="theme-color" content="#06181b">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="파라노마사이트 FILE38: 이세 인어 이야기 한글 패치">
+<meta property="og:description" content="PARANORMASIGHT: The Mermaid's Curse 비공식 한국어 번역 패치 · 한글 패치 제작 SAKURA">
+<meta property="og:image" content="assets/paranormasight2/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --deep: #06181b;
+    --sea: #0b2a2e;
+    --sea-2: #10383d;
+    --line: rgba(146, 214, 204, 0.18);
+    --line-strong: rgba(146, 214, 204, 0.36);
+    --glow: #7fd8cb;
+    --foam: #e9f4f1;
+    --text: #d7e7e4;
+    --muted: #93b3ae;
+    --ember: #c4333a;
+    --sun: #e8c36a;
+    --paper: #f3eee4;
+    --ink: #1b1b1b;
+    --radius: 14px;
+    --wrap: 1080px;
+    --serif: "Noto Serif KR", "Nanum Myeongjo", serif;
+    --sans: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--deep);
+    background-image:
+      radial-gradient(1200px 600px at 85% -10%, rgba(127, 216, 203, 0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 40%, rgba(16, 56, 61, 0.55), transparent 70%);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.75;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  a { color: var(--glow); text-underline-offset: 3px; }
+  a:hover { color: var(--foam); }
+  img { max-width: 100%; display: block; }
+  .wrap { width: min(var(--wrap), 100% - 32px); margin-inline: auto; }
+
+  /* top bar */
+  .bar {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(6, 24, 27, 0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar .wrap { display: flex; align-items: center; gap: 16px; min-height: 56px; }
+  .brand { font-family: var(--serif); font-weight: 700; color: var(--foam); text-decoration: none; font-size: 15px; white-space: nowrap; }
+  .brand span { color: var(--ember); }
+  .bar nav { margin-left: auto; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+  .bar nav::-webkit-scrollbar { display: none; }
+  .bar nav a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+  .bar nav a:hover { color: var(--foam); background: rgba(127, 216, 203, 0.08); }
+
+  /* hero */
+  .hero { position: relative; }
+  .hero picture img { width: 100%; height: auto; max-height: 78vh; object-fit: cover; object-position: center; }
+  .hero::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 30%;
+    background: linear-gradient(to bottom, transparent, var(--deep));
+    pointer-events: none;
+  }
+  .intro { position: relative; z-index: 1; margin-top: -48px; padding-bottom: 8px; }
+  .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.08em; color: var(--glow); text-transform: uppercase; }
+  .kicker::before { content: ""; width: 22px; height: 1px; background: var(--glow); }
+  h1 {
+    font-family: var(--serif); font-weight: 900; color: var(--foam);
+    font-size: clamp(30px, 5.2vw, 54px); line-height: 1.25; margin: 10px 0 12px;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+  }
+  h1 small { display: block; font-size: 0.5em; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .orig { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
+  .credit { color: var(--text); }
+  .credit b { color: #ff8fbf; font-weight: 700; }
+
+  .notice {
+    display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
+    border: 1px solid rgba(196, 51, 58, 0.45); background: linear-gradient(135deg, rgba(196, 51, 58, 0.14), rgba(196, 51, 58, 0.04));
+    border-radius: var(--radius); padding: 16px 18px; margin: 8px 0 22px;
+  }
+  .notice .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ember); margin-top: 8px; box-shadow: 0 0 0 4px rgba(196, 51, 58, 0.2); }
+  .notice strong { color: var(--foam); }
+  .notice p { margin: 0; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; font-size: 15px;
+    padding: 11px 18px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--foam);
+    background: rgba(127, 216, 203, 0.06);
+  }
+  .btn:hover { background: rgba(127, 216, 203, 0.14); color: var(--foam); }
+  .btn.primary { background: var(--glow); color: #05211f; border-color: transparent; }
+  .btn.primary:hover { background: var(--foam); color: #05211f; }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 40px 0 8px; }
+  .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; background: rgba(11, 42, 46, 0.5); }
+  .stat b { display: block; font-family: var(--serif); font-size: clamp(24px, 3.2vw, 34px); color: var(--foam); line-height: 1.2; }
+  .stat span { color: var(--muted); font-size: 14px; }
+
+  /* sections */
+  section { padding: 56px 0 8px; }
+  h2 {
+    font-family: var(--serif); font-weight: 700; color: var(--foam); font-size: clamp(22px, 3vw, 30px);
+    margin: 0 0 6px; display: flex; align-items: center; gap: 12px;
+  }
+  h2::before { content: ""; width: 6px; height: 1.1em; border-radius: 3px; background: linear-gradient(var(--glow), var(--ember)); }
+  .lead { color: var(--muted); margin: 0 0 24px; }
+  h3 { font-family: var(--serif); color: var(--foam); font-size: 19px; margin: 0 0 10px; }
+  p { margin: 0 0 14px; }
+
+  .about { display: grid; grid-template-columns: 1fr 280px; gap: 36px; align-items: start; }
+  .about figure { margin: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+  .about figcaption { font-size: 13px; color: var(--muted); padding: 8px 12px; background: rgba(11, 42, 46, 0.7); }
+
+  /* progress */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .step {
+    display: grid; grid-template-columns: 26px 1fr auto; gap: 14px; align-items: start;
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; background: rgba(11, 42, 46, 0.45);
+  }
+  .step .mark { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+  .step.done .mark { background: var(--glow); color: #05211f; }
+  .step.doing .mark { background: transparent; border: 2px solid var(--sun); color: var(--sun); }
+  .step.todo .mark { background: transparent; border: 2px solid var(--line-strong); color: var(--muted); }
+  .step h3 { font-size: 17px; margin: 0 0 2px; font-family: var(--sans); }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+  .chip { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+  .done .chip { background: rgba(127, 216, 203, 0.14); color: var(--glow); }
+  .doing .chip { background: rgba(232, 195, 106, 0.14); color: var(--sun); }
+  .todo .chip { background: rgba(147, 179, 174, 0.12); color: var(--muted); }
+  .footnote { color: var(--muted); font-size: 14px; margin-top: 14px; }
+
+  /* cards */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: rgba(11, 42, 46, 0.45); }
+  .card ul { margin: 0; padding-left: 1.1em; }
+  .card li { margin: 6px 0; }
+  code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 0.92em; color: var(--foam); background: rgba(127, 216, 203, 0.1); padding: 1px 6px; border-radius: 6px; }
+  .tip { margin-top: 16px; border-left: 3px solid var(--sun); padding: 10px 14px; background: rgba(232, 195, 106, 0.07); border-radius: 0 10px 10px 0; color: var(--text); font-size: 15px; }
+
+  /* table */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 520px; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--foam); font-weight: 700; background: rgba(16, 56, 61, 0.6); font-size: 14px; }
+  tr:last-child td { border-bottom: 0; }
+  td.ja { font-family: var(--serif); color: var(--foam); white-space: nowrap; }
+  td.note { color: var(--muted); }
+
+  .rules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
+  .rule { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; background: rgba(11, 42, 46, 0.35); }
+  .rule b { display: block; color: var(--foam); margin-bottom: 4px; }
+  .rule p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* faq */
+  details { border: 1px solid var(--line); border-radius: var(--radius); background: rgba(11, 42, 46, 0.4); margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 16px 18px; font-weight: 700; color: var(--foam); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--glow); font-weight: 400; font-size: 20px; line-height: 1; }
+  details[open] summary::after { content: "−"; }
+  details > div { padding: 0 18px 16px; color: var(--text); }
+  details > div p:last-child { margin-bottom: 0; }
+
+  /* footer */
+  footer { margin-top: 72px; border-top: 1px solid var(--line); background: rgba(4, 16, 18, 0.7); padding: 36px 0 44px; font-size: 14px; color: var(--muted); }
+  .foot { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: start; }
+  .official { background: var(--paper); border-radius: 12px; padding: 14px 16px; width: 220px; text-decoration: none; color: var(--ink); display: block; }
+  .official img { width: 100%; height: auto; }
+  .official span { display: block; font-size: 12px; margin-top: 8px; color: #555; }
+  footer p { margin: 0 0 8px; }
+  footer .maker { color: var(--foam); font-weight: 700; }
+  footer .maker b { color: #ff8fbf; }
+
+  @media (max-width: 860px) {
+    .about, .grid-2, .rules { grid-template-columns: 1fr; }
+    .about figure { display: none; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .foot { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .hero picture img { max-height: none; }
+    .intro { margin-top: -24px; }
+    .bar nav { display: none; }
+    .step { grid-template-columns: 26px 1fr; }
+    .step .chip { grid-column: 2; justify-self: start; }
+    table { min-width: 0; font-size: 14px; }
+    th, td { padding: 10px 12px; }
+    section { padding-top: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">이세 인어 이야기 <span>한글 패치</span></a>
+    <nav aria-label="페이지 목차">
+      <a href="#about">소개</a>
+      <a href="#progress">진행 현황</a>
+      <a href="#support">지원·설치</a>
+      <a href="#policy">번역 기준</a>
+      <a href="#faq">자주 묻는 질문</a>
+      <a href="#report">문제 제보</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <picture>
+      <source media="(max-width: 640px)" srcset="assets/paranormasight2/keyart-portrait.webp">
+      <source media="(max-width: 1100px)" srcset="assets/paranormasight2/keyart-wide-960.webp">
+      <img src="assets/paranormasight2/keyart-wide.webp" width="1920" height="1080" alt="PARANORMASIGHT: The Mermaid's Curse 키 아트. 바닷속에서 인어와 카메시마 사람들이 모여 있다.">
+    </picture>
+  </div>
+
+  <div class="wrap intro">
+    <div class="kicker">비공식 한국어 번역 패치</div>
+    <h1><small>파라노마사이트 FILE38</small>이세 인어 이야기 한글 패치</h1>
+    <p class="orig">PARANORMASIGHT: The Mermaid's Curse · パラノマサイト FILE38 伊勢人魚物語<br>
+      <span class="credit">한글 패치 제작 <b>SAKURA</b></span></p>
+
+    <div class="notice" role="note">
+      <div class="dot" aria-hidden="true"></div>
+      <p><strong>아직 공개 배포판이 없습니다.</strong> 번역과 1차 일괄 검수를 마쳤고, 지금은 게임에 쓸 한글 글꼴을 고르는 단계입니다. 시험판은 제작자가 직접 화면을 확인하는 용도로만 쓰고 있으며 내려받을 수 없습니다. 배포판을 공개하면 이 페이지와 GitHub Releases에 함께 안내합니다.</p>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary" href="#progress">진행 현황 보기</a>
+      <a class="btn" href="https://github.com/deuxdoom/GameKoreanPatch">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub 저장소
+      </a>
+    </div>
+
+    <div class="stats" aria-label="번역 분량">
+      <div class="stat"><b>14,156</b><span>대사·선택지·자료·UI 행</span></div>
+      <div class="stat"><b>433</b><span>스태프 크레디트 행</span></div>
+      <div class="stat"><b>14</b><span>한글화한 핵심 이미지</span></div>
+      <div class="stat"><b>35</b><span>입력 퍼즐 한국어 정답</span></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>소개</h2>
+        <p>『파라노마사이트 FILE38: 이세 인어 이야기』는 스퀘어 에닉스의 미스터리 어드벤처 게임입니다. 198x년 여름, 미에현 이세만에 떠 있는 외딴섬 카메시마를 무대로 인어 전설과 섬을 덮친 저주를 쫓아갑니다.</p>
+        <p>2026년 2월 19일에 Nintendo Switch, PC(Steam), iOS, Android로 출시되었으며, 정식 한국어는 지원하지 않습니다.</p>
+        <p>이 패치는 일본어 원문을 기준으로 대사, 선택지, 자료, 메뉴, 인물 소개, 스태프 크레디트를 한국어로 옮깁니다. 게임의 일본어 언어 설정 자리에 한국어가 표시되는 방식입니다.</p>
+      </div>
+      <figure>
+        <img src="assets/paranormasight2/keyart-portrait.webp" width="800" height="1200" loading="lazy" alt="PARANORMASIGHT: The Mermaid's Curse 세로형 키 아트">
+        <figcaption>© SQUARE ENIX</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="progress">
+    <div class="wrap">
+      <h2>진행 현황</h2>
+      <p class="lead">배포 전에 거치는 단계와 지금 위치입니다.</p>
+      <ol class="steps">
+        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>번역</h3><p>대사·선택지·자료·UI 14,156행, 별도 스태프 크레디트 433행</p></div><span class="chip">완료</span></li>
+        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>1차 일괄 검수·수정</h3><p>일본어 원문 대조, 인물별 호칭·말투, 고유명사 표기, 단서·숫자·제어문 점검</p></div><span class="chip">완료</span></li>
+        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>이미지 한글화</h3><p>타이틀·안내·자료의 핵심 이미지 14종, 인물 소개 이름 19곳 (정적 검사 기준)</p></div><span class="chip">완료</span></li>
+        <li class="step doing"><span class="mark" aria-hidden="true">!</span><div><h3>한국어 입력</h3><p>이름·단서 입력 8곳에 한국어 정답 35개 연결. Steam 한글 입력기 조합·확정과 분기 진행은 실제 확인 전</p></div><span class="chip">실행 확인 대기</span></li>
+        <li class="step doing"><span class="mark" aria-hidden="true">…</span><div><h3>글꼴 결정</h3><p>시험판 <code>FONT-20261021-01</code>로 실제 화면을 확인하고 있습니다</p></div><span class="chip">진행 중</span></li>
+        <li class="step todo"><span class="mark" aria-hidden="true">6</span><div><h3>최종 빌드·실행 확인</h3><p>전체 플레이 확인과 보고된 문제 수정</p></div><span class="chip">대기</span></li>
+        <li class="step todo"><span class="mark" aria-hidden="true">7</span><div><h3>배포용 설치 프로그램</h3><p>원본 게임 파일을 포함하지 않는 차분 패치, 백업·복구·제거 지원</p></div><span class="chip">대기</span></li>
+      </ol>
+      <p class="footnote">한국어 입력은 실제 게임에서 확인을 마치기 전까지 배포하지 않습니다.</p>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="wrap">
+      <h2>지원 환경과 설치</h2>
+      <p class="lead">배포판은 Windows용 Steam판을 대상으로 합니다.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>지원 환경</h3>
+          <ul>
+            <li><b>Windows용 Steam판만</b> 지원합니다 (Steam AppID <code>2701440</code>).</li>
+            <li>지금까지 확인한 Steam 빌드는 <code>22496791</code>입니다. 배포판을 공개할 때 지원 빌드와 파일 해시를 함께 공지합니다.</li>
+            <li>Nintendo Switch, iOS, Android판과 Steam 이외의 PC판은 지원하지 않습니다.</li>
+            <li>게임을 정상적으로 구매해 설치한 상태여야 합니다. 배포판은 원본 게임 파일을 포함하지 않습니다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>설치 프로그램 (배포 예정)</h3>
+          <ul>
+            <li>Steam 설치 위치 자동 검색과 게임 폴더 직접 선택</li>
+            <li>지원하는 게임 판본인지 파일 해시로 확인</li>
+            <li>바꾸기 전 원본 파일 백업, 설치 실패 시 자동 복구</li>
+            <li>패치 제거 (백업해 둔 원본으로 되돌리기)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="tip">설치한 뒤에는 평소처럼 Steam에서 게임을 실행하고, 게임 설정의 언어를 <b>日本語(일본어)</b>로 두면 한국어가 표시됩니다.</p>
+    </div>
+  </section>
+
+  <section id="policy">
+    <div class="wrap">
+      <h2>번역 기준</h2>
+      <p class="lead">처음 한 번 플레이하는 사람이 원작의 단서와 인물 관계를 그대로 느낄 수 있도록 옮겼습니다.</p>
+      <div class="rules">
+        <div class="rule"><b>일본어 원문 기준</b><p>영어판은 문맥을 확인하는 참고 자료로만 썼습니다.</p></div>
+        <div class="rule"><b>고유명사 표기</b><p>한국 게임·애니메이션에서 널리 쓰는 표기를 따릅니다(카메시마, 츠카사, 타이라노 토모시게). 도쿄처럼 굳은 표기와 공식 명칭은 그대로 씁니다.</p></div>
+        <div class="rule"><b>호칭과 존댓말</b><p>인물 소개의 나이와 관계에 맞췄습니다. 예를 들어 츠카사는 유자와 아자미를 ‘오빠’라고 부릅니다.</p></div>
+        <div class="rule"><b>이미지 범위</b><p>제목·안내·조작·퍼즐 단서처럼 진행에 필요한 글자만 한글화했습니다. 장식·낙관·작은 옛 글씨는 원화 그대로입니다.</p></div>
+        <div class="rule"><b>숫자와 연도</b><p>‘5년 전’처럼 아라비아 숫자로 씁니다.</p></div>
+        <div class="rule"><b>스태프 크레디트</b><p>업무명과 일본어 이름을 한국어로 옮기고, 아래쪽 영문 이름은 그대로 둡니다.</p></div>
+      </div>
+
+      <h3>주요 용어</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">원문</th><th scope="col">한국어</th><th scope="col">비고</th></tr></thead>
+          <tbody>
+            <tr><td class="ja">亀島</td><td>카메시마</td><td class="note">작품의 무대가 되는 섬</td></tr>
+            <tr><td class="ja">八百比丘尼</td><td>야오비쿠니</td><td class="note">공식 명칭을 따름</td></tr>
+            <tr><td class="ja">なめどり</td><td>불량 조류</td><td class="note">전작 한글 패치와 같은 용어</td></tr>
+            <tr><td class="ja">素潜り漁</td><td>물질 / 잠수 어로</td><td class="note">대사는 ‘물질’, 미니게임·자료 화면은 ‘잠수 어로’</td></tr>
+            <tr><td class="ja">トモカヅキ</td><td>토모카즈키</td><td class="note">이세·시마 지역 해녀 전승</td></tr>
+            <tr><td class="ja">呪主</td><td>저주인</td><td class="note"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>자주 묻는 질문</h2>
+      <p class="lead">배포 전에 미리 알아 두면 좋은 내용입니다.</p>
+      <details>
+        <summary>언제 배포하나요?</summary>
+        <div><p>글꼴을 확정하고, 최종 빌드로 전체 플레이와 한국어 입력을 확인한 뒤 배포합니다. 정해진 날짜는 아직 없습니다.</p></div>
+      </details>
+      <details>
+        <summary>Switch나 모바일판에서도 쓸 수 있나요?</summary>
+        <div><p>아니요. Windows용 Steam판만 지원합니다.</p></div>
+      </details>
+      <details>
+        <summary>Steam 업데이트 뒤에 일본어로 돌아왔어요.</summary>
+        <div><p>Steam의 게임 파일 무결성 확인이나 게임 업데이트가 패치한 파일을 원래대로 되돌릴 수 있습니다. 게임이 업데이트되면 새 판본을 지원하는 패치가 나올 때까지 기다려 주세요.</p></div>
+      </details>
+      <details>
+        <summary>그림 속 일본어가 일부 남아 있어요.</summary>
+        <div><p>진행에 필요한 제목·안내·단서만 한글화하고, 그림의 장식이나 작은 옛 글씨는 원화 그대로 두었습니다. 읽어야 진행할 수 있는 글자가 일본어로 남아 있다면 제보해 주세요.</p></div>
+      </details>
+      <details>
+        <summary>어떤 글꼴을 쓰나요?</summary>
+        <div>
+          <p>현재 시험판 기준이며, 최종 결정 후 갱신합니다. 글꼴 원본은 수정하지 않았고 배포판에 각 라이선스 원문을 함께 넣습니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">글꼴</th><th scope="col">쓰는 곳</th><th scope="col">라이선스</th></tr></thead>
+              <tbody>
+                <tr><td>Noto Sans CJK KR</td><td>대사·메뉴 등 기본 본문</td><td class="note">SIL OFL 1.1 (© Adobe)</td></tr>
+                <tr><td>Noto Serif CJK KR</td><td>자료 그림 속 문구</td><td class="note">SIL OFL 1.1 (© Adobe)</td></tr>
+                <tr><td>Pretendard</td><td>시작 화면 저작권 주의 문구</td><td class="note">SIL OFL 1.1</td></tr>
+                <tr><td>마루 부리 (MaruBuri)</td><td>작은 타이틀</td><td class="note">SIL OFL 1.1 (© NAVER Corp.)</td></tr>
+                <tr><td>조선100년체</td><td>큰 타이틀 (이미지로 그림)</td><td class="note">방일영문화재단 무료 글꼴 (수정·판매 금지)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="report">
+    <div class="wrap">
+      <h2>문제 제보</h2>
+      <p class="lead">오역, 어색한 표현, 글자 잘림, 진행 문제를 알려 주세요.</p>
+      <div class="card">
+        <p><a href="https://github.com/deuxdoom/GameKoreanPatch/issues">GitHub Issues</a>에 다음 내용을 함께 적어 주시면 빠르게 확인할 수 있습니다.</p>
+        <ul>
+          <li>패치 버전 (시작 화면이나 배포판 이름)</li>
+          <li>문제가 나온 장면과 바로 전에 한 조작</li>
+          <li>화면 스크린샷</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="official" href="https://www.jp.square-enix.com/paranormasight/file38/" rel="noopener">
+      <img src="assets/paranormasight2/logo-press-black.png" width="360" height="141" alt="PARANORMASIGHT: The Mermaid's Curse 로고">
+      <span>원작 공식 사이트 (일본어)</span>
+    </a>
+    <div>
+      <p class="maker">한글 패치 제작 · <b>SAKURA</b></p>
+      <p>『PARANORMASIGHT: The Mermaid's Curse』와 이 페이지에 쓴 키 아트·로고, 게임 안의 모든 텍스트·이미지의 권리는 SQUARE ENIX에 있습니다. © SQUARE ENIX</p>
+      <p>SQUARE ENIX and the SQUARE ENIX logo are trademarks or registered trademarks of Square Enix Holdings Co., Ltd.</p>
+      <p>이 패치는 개인이 만든 비공식 팬 번역이며 SQUARE ENIX와 관계가 없습니다. 패치 사용에 따른 문제는 SQUARE ENIX에 문의하지 말아 주세요. 이 저장소에는 원본 게임 파일과 게임에서 추출한 데이터를 올리지 않으며, 키 아트와 로고는 패치를 소개하는 용도로만 씁니다. 권리자가 요청하면 바로 내립니다.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
