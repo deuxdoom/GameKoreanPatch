@@ -208,6 +208,26 @@
   footer .maker { color: var(--foam); font-weight: 700; }
   footer .maker b { color: #ff8fbf; }
 
+  /* original game introduction (collapsible) */
+  details.fold summary { font-family: var(--serif); font-size: 18px; padding: 18px 20px; }
+  details.fold > div { padding: 2px 20px 20px; }
+  details.fold[open] { border-color: var(--line-strong); }
+  .synopsis { text-align: center; font-family: var(--serif); font-weight: 600; color: var(--foam); font-size: clamp(16px, 2.1vw, 20px); line-height: 2; padding: 10px 0 4px; }
+  .synopsis p { margin: 0; }
+  .synopsis em { font-style: normal; font-weight: 900; color: #e5484d; font-size: 1.35em; text-shadow: 0 0 18px rgba(229, 72, 77, 0.35); }
+  .cast { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cast li { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: rgba(4, 16, 18, 0.45); }
+  .cast h3 { margin: 0; font-size: 18px; }
+  .orig-name { display: block; font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+  .cast p { margin: 0; font-size: 15px; color: var(--text); }
+  .staff { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .staff li { border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; background: rgba(4, 16, 18, 0.45); }
+  .staff .role { display: inline-block; font-size: 12px; font-weight: 700; color: var(--glow); border: 1px solid rgba(127, 216, 203, 0.4); border-radius: 999px; padding: 2px 10px; margin-right: 10px; vertical-align: 2px; }
+  .staff b { font-family: var(--serif); font-size: 18px; color: var(--foam); }
+  .staff .orig-name { display: inline; margin: 0 0 0 8px; }
+  .staff p { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+  .source { font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+
   /* screenshots: Apple-style carousel */
   .carousel { --slide: min(820px, 80vw); --gap: 22px; --dur: 5s; margin-top: 4px; }
   .viewport { overflow: hidden; padding: 6px 0 4px; }
@@ -299,7 +319,7 @@
   .status.warn { color: var(--sun); }
 
   @media (max-width: 860px) {
-    .about, .grid-2, .rules, .field-row { grid-template-columns: 1fr; }
+    .about, .grid-2, .rules, .field-row, .cast { grid-template-columns: 1fr; }
     .carousel { --slide: 88vw; --gap: 12px; }
     .about figure { display: none; }
     .stats { grid-template-columns: repeat(2, 1fr); }
@@ -324,6 +344,7 @@
     <a class="brand" href="#top">이세 인어 이야기 <span>한글 패치</span></a>
     <nav aria-label="페이지 목차">
       <a href="#about">소개</a>
+      <a href="#original">원작 소개</a>
       <a href="#screens">적용 화면</a>
       <a href="#progress">진행 현황</a>
       <a href="#support">지원·설치</a>
@@ -392,6 +413,67 @@
         <img src="assets/paranormasight2/keyart-portrait.webp" srcset="assets/paranormasight2/keyart-portrait.webp 800w, assets/paranormasight2/keyart-portrait-1200.webp 1200w" sizes="280px" width="800" height="1200" loading="lazy" alt="PARANORMASIGHT: The Mermaid's Curse 세로형 키 아트">
         <figcaption>© SQUARE ENIX</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section id="original">
+    <div class="wrap">
+      <h2>원작 소개</h2>
+      <p class="lead">원작 공식 사이트의 줄거리, 등장인물, 제작 스태프 소개를 한국어로 옮겼습니다. 제목을 누르면 펼쳐집니다.</p>
+
+      <details class="fold">
+        <summary>줄거리</summary>
+        <div>
+          <div class="synopsis">
+            <p>무대는 미에현 이세시마 지방.</p>
+            <p><em>불로불사</em>를 가져다준다는 인어의 수수께끼를 둘러싸고</p>
+            <p>여름 외딴섬에서 펼쳐지는 군상극 전기(傳奇) 미스터리.</p>
+            <p>등장인물 저마다의 속셈이 얽히고설키며</p>
+            <p>이윽고 수백 년의 역사를 넘나드는 인어의 저주를 둘러싼</p>
+            <p><em>경악할 드라마</em>로 이어져 간다.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="fold">
+        <summary>등장인물</summary>
+        <div>
+          <ul class="cast">
+            <li><h3>미나쿠치 유자</h3><span class="orig-name">水口 勇佐 · Yuza Minakuchi</span>
+              <p>카메시마에 사는, 성실하면서도 마이페이스인 소년. 은퇴한 할머니의 뒤를 이어 해녀 일을 시작했다. 5년 전 해난 사고로 부모님을 잃었고, 그때 어떤 신비한 일을 겪었다.</p></li>
+            <li><h3>쿠모이 아자미</h3><span class="orig-name">雲居 アザミ · Azami Kumoi</span>
+              <p>미나쿠치 유자의 소꿉친구이자 단짝. 세상을 떠난 아버지의 어선을 물려받아 어부로 일한다. 남을 잘 챙겨 주변에서 의지하는 타입으로, 고향 사랑만큼은 누구보다 강하다고 자부한다.</p></li>
+            <li><h3>시라나미 사토</h3><span class="orig-name">白浪 里 · Sato Shiranami</span>
+              <p>몇 달 전 카메시마에 흘러들어 온 수수께끼의 소녀. 기억을 잃은 것 같은데…….</p></li>
+            <li><h3>아와오 츠카사</h3><span class="orig-name">沫緒 つかさ · Tsukasa Awao</span>
+              <p>카메시마에서 나고 자란 밝고 활발한 소녀. 지금은 고등학교에 다니려고 본토에서 하숙하고 있다. 미나쿠치 유자, 쿠모이 아자미와는 소꿉친구. 고향에 내려온 동안 시라나미 사토와 친해졌다.</p></li>
+            <li><h3>아르나브 바넘</h3><span class="orig-name">アルナーヴ・バーナム · Arnav Barnum</span>
+              <p>낭만을 찾아 일본에 온 미국인. 본업은 판타지 작가 겸 오컬트 라이터. 아무래도 이세시마에서 인어를 찾고 있는 모양이다. 애칭은 ‘아비’. 40세. 독신.</p></li>
+            <li><h3>키르케 루나라이트</h3><span class="orig-name">キルケ・ルナーライト · Circe Lunarlight</span>
+              <p>《엑소시스트》 소녀. 영국 명문가 출신으로 일본에 유학 중이다. 일본의 전승과 오컬트에 밝아, 친척인 아비의 부탁으로 가이드를 맡고 있다.</p></li>
+            <li><h3>시키 유메코</h3><span class="orig-name">志貴 結命子 · Yumeko Shiki</span>
+              <p>자칭 도쿄의 주부. 무언가를 조사하고 있는 모양인데…….</p></li>
+            <li><h3>키류 소도</h3><span class="orig-name">霧生 双奴 · Sodo Kiryu</span>
+              <p>시키 유메코의 조수로 일하는 청년. 범상치 않은 분위기를 풍긴다.</p></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="fold">
+        <summary>제작 스태프</summary>
+        <div>
+          <ul class="staff">
+            <li><span class="role">디렉터 / 시나리오</span><b>이시야마 타카나리</b><span class="orig-name">石山貴也</span>
+              <p>「스쿨걸 스트라이커즈」, 「파라노마사이트 FILE23 혼조 칠대 불가사의」 등</p></li>
+            <li><span class="role">캐릭터 디자인</span><b>코바야시 겐</b><span class="orig-name">小林 元</span>
+              <p>「스쿨걸 스트라이커즈」, 「파라노마사이트 FILE23 혼조 칠대 불가사의」 등</p></li>
+            <li><span class="role">사운드 컴포저</span><b>이와사키 히데노리</b><span class="orig-name">岩﨑英則</span>
+              <p>「파이널 판타지 크리스탈 크로니클 크리스탈 베어러」, 「파라노마사이트 FILE23 혼조 칠대 불가사의」 등</p></li>
+          </ul>
+        </div>
+      </details>
+
+      <p class="source">출처: <a href="https://www.jp.square-enix.com/paranormasight/file38/" rel="noopener">원작 공식 사이트(일본어)</a>의 소개 문구를 한국어로 옮겼습니다. © SQUARE ENIX</p>
     </div>
   </section>
 
