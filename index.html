@@ -112,8 +112,24 @@
   .btn.primary:hover { background: var(--foam); color: #05211f; }
   .btn svg { width: 18px; height: 18px; }
 
+  /* translation & review complete */
+  .complete {
+    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; margin: 32px 0 0;
+    padding: 22px 24px; border-radius: 18px; border: 1px solid rgba(127, 216, 203, 0.55);
+    background: linear-gradient(135deg, rgba(127, 216, 203, 0.16), rgba(16, 56, 61, 0.55) 55%, rgba(11, 42, 46, 0.6));
+    box-shadow: 0 0 0 1px rgba(127, 216, 203, 0.08), 0 14px 40px rgba(0, 0, 0, 0.35), inset 0 0 40px rgba(127, 216, 203, 0.07);
+  }
+  .complete-mark { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--glow); color: #05211f; box-shadow: 0 0 0 6px rgba(127, 216, 203, 0.18), 0 0 26px rgba(127, 216, 203, 0.55); }
+  .complete-mark svg { width: 28px; height: 28px; }
+  .complete-title { margin: 0 0 6px; font-family: var(--serif); font-weight: 900; color: var(--foam); font-size: clamp(21px, 2.8vw, 28px); line-height: 1.3; }
+  .complete-title b { color: var(--glow); }
+  .complete-desc { margin: 0 0 12px; color: var(--text); }
+  .complete-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .complete-tags li { font-size: 13px; font-weight: 700; color: var(--foam); padding: 4px 11px; border-radius: 999px; background: rgba(127, 216, 203, 0.14); border: 1px solid rgba(127, 216, 203, 0.35); }
+  .complete-tags li:nth-last-child(-n+2) { background: rgba(232, 195, 106, 0.12); border-color: rgba(232, 195, 106, 0.4); color: #f4dca0; }
+
   /* stats */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 40px 0 8px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0 8px; }
   .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; background: rgba(11, 42, 46, 0.5); }
   .stat b { display: block; font-family: var(--serif); font-size: clamp(24px, 3.2vw, 34px); color: var(--foam); line-height: 1.2; }
   .stat span { color: var(--muted); font-size: 14px; }
@@ -334,7 +350,7 @@
 
     <div class="notice" role="note">
       <div class="dot" aria-hidden="true"></div>
-      <p><strong>아직 공개 배포판이 없습니다.</strong> 번역과 1차 일괄 검수를 마쳤고, 지금은 게임에 쓸 한글 글꼴을 고르는 단계입니다. 시험판은 제작자가 직접 화면을 확인하는 용도로만 쓰고 있으며 내려받을 수 없습니다. 배포판을 공개하면 이 페이지와 GitHub Releases에 함께 안내합니다.</p>
+      <p><strong>아직 공개 배포판이 없습니다.</strong> 번역과 일괄 검수는 모두 마쳤고, 지금은 게임에 쓸 한글 글꼴을 고르는 단계입니다. 시험판은 제작자가 직접 화면을 확인하는 용도로만 쓰고 있으며 내려받을 수 없습니다. 배포판을 공개하면 이 페이지와 GitHub Releases에 함께 안내합니다.</p>
     </div>
 
     <div class="actions">
@@ -345,10 +361,21 @@
       </a>
     </div>
 
+    <div class="complete" role="note">
+      <div class="complete-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <div>
+        <p class="complete-title">텍스트 <b>14,156행</b> 전부 번역·검수 완료</p>
+        <p class="complete-desc">게임 안 텍스트를 하나도 빠짐없이 번역하고, 모두 일본어 원문과 대조해 검수했습니다. 진행에 필요한 그림 속 글자도 한글화와 검수를 마쳤습니다.</p>
+        <ul class="complete-tags" aria-label="번역·검수한 범위">
+          <li>본편</li><li>선택지</li><li>자료·머리글</li><li>인물</li><li>차트</li><li>미니게임</li><li>엔딩</li><li>극장</li><li>스태프 크레디트 433행</li><li>핵심 이미지 14종</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="stats" aria-label="번역 분량">
-      <div class="stat"><b>14,156</b><span>대사·선택지·자료·UI 행</span></div>
-      <div class="stat"><b>433</b><span>스태프 크레디트 행</span></div>
-      <div class="stat"><b>14</b><span>한글화한 핵심 이미지</span></div>
+      <div class="stat"><b>14,156</b><span>번역·검수를 마친 텍스트 행</span></div>
+      <div class="stat"><b>433</b><span>번역·검수를 마친 크레디트 행</span></div>
+      <div class="stat"><b>14</b><span>한글화·검수한 핵심 이미지</span></div>
       <div class="stat"><b>35</b><span>입력 퍼즐 한국어 정답</span></div>
     </div>
   </div>
@@ -371,7 +398,7 @@
   <section id="screens">
     <div class="wrap">
       <h2>적용 화면</h2>
-      <p class="lead">개발 중인 시험판(FONT-20261021-01)에서 찍은 화면입니다. 배포판에서는 글꼴과 표현이 달라질 수 있습니다. 이미지를 누르면 크게 보이고, 다시 누르면 돌아갑니다.</p>
+      <p class="lead">개발 중인 시험판에서 찍은 화면입니다. 배포판에서는 글꼴과 표현이 달라질 수 있습니다. 이미지를 누르면 크게 보이고, 다시 누르면 돌아갑니다.</p>
     </div>
     <div class="carousel" id="carousel" aria-roledescription="캐러셀" aria-label="적용 화면">
     <div class="viewport">
@@ -401,11 +428,11 @@
       <h2>진행 현황</h2>
       <p class="lead">배포 전에 거치는 단계와 지금 위치입니다.</p>
       <ol class="steps">
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>번역</h3><p>대사·선택지·자료·UI 14,156행, 별도 스태프 크레디트 433행</p></div><span class="chip">완료</span></li>
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>1차 일괄 검수·수정</h3><p>일본어 원문 대조, 인물별 호칭·말투, 고유명사 표기, 단서·숫자·제어문 점검</p></div><span class="chip">완료</span></li>
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>이미지 한글화</h3><p>타이틀·안내·자료의 핵심 이미지 14종, 인물 소개 이름 19곳 (정적 검사 기준)</p></div><span class="chip">완료</span></li>
+        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>번역</h3><p>본편·선택지·자료/머리글·인물·차트·미니게임·엔딩·극장 등 <b>14,156행 전체</b>, 별도 스태프 크레디트 433행</p></div><span class="chip">전부 완료</span></li>
+        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>일괄 검수·수정</h3><p>전체 행을 일본어 원문과 대조해 오역, 인물별 호칭·말투, 고유명사 표기, 단서·숫자·제어문 점검</p></div><span class="chip">전부 완료</span></li>
+        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>이미지 한글화</h3><p>진행에 필요한 타이틀·안내·자료의 핵심 이미지 14종 한글화·검수, 인물 소개 이름 19곳</p></div><span class="chip">완료</span></li>
         <li class="step doing"><span class="mark" aria-hidden="true">!</span><div><h3>한국어 입력</h3><p>이름·단서 입력 8곳에 한국어 정답 35개 연결. Steam 한글 입력기 조합·확정과 분기 진행은 실제 확인 전</p></div><span class="chip">실행 확인 대기</span></li>
-        <li class="step doing"><span class="mark" aria-hidden="true">…</span><div><h3>글꼴 결정</h3><p>시험판 <code>FONT-20261021-01</code>로 실제 화면을 확인하고 있습니다</p></div><span class="chip">진행 중</span></li>
+        <li class="step doing"><span class="mark" aria-hidden="true">…</span><div><h3>글꼴 결정</h3><p>시험판 <code>FONT-20261021-02</code>로 실제 화면을 확인하고 있습니다</p></div><span class="chip">진행 중</span></li>
         <li class="step todo"><span class="mark" aria-hidden="true">6</span><div><h3>최종 빌드·실행 확인</h3><p>전체 플레이 확인과 보고된 문제 수정</p></div><span class="chip">대기</span></li>
         <li class="step todo"><span class="mark" aria-hidden="true">7</span><div><h3>배포용 설치 프로그램</h3><p>원본 게임 파일을 포함하지 않는 차분 패치, 백업·복구·제거 지원</p></div><span class="chip">대기</span></li>
       </ol>
