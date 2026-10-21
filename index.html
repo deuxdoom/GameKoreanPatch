@@ -273,6 +273,9 @@
   .thumbs button { flex: 1; font: inherit; font-size: 13px; padding: 5px 0; border-radius: 8px; cursor: pointer; border: 1px solid var(--line-strong); color: var(--foam); background: rgba(127, 216, 203, 0.06); }
   .thumbs button:hover { background: rgba(127, 216, 203, 0.16); }
   .hint { font-size: 14px; color: var(--muted); margin: 0; }
+  .hint.alert { color: var(--text); border: 1px solid rgba(255, 99, 99, 0.6); border-left-width: 4px; background: rgba(255, 80, 80, 0.09); border-radius: 10px; padding: 12px 14px; }
+  .hint-alert { display: flex; align-items: center; gap: 8px; color: #ff6b6b; font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+  .hint-alert svg { flex: none; width: 20px; height: 20px; }
   kbd { font-family: inherit; font-size: 12px; border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; color: var(--foam); }
   .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
   .form-actions .btn { cursor: pointer; font-family: inherit; }
@@ -555,7 +558,7 @@
           </div>
           <ul class="thumbs" id="r-thumbs" aria-live="polite"></ul>
         </div>
-        <p class="hint">이미지는 이 페이지에서 GitHub로 바로 전송되지 않습니다. 제보 버튼을 누르면 첫 번째 스크린샷이 클립보드에 복사되니, 열린 GitHub 화면의 본문 <b>스크린샷</b> 항목 아래에 <kbd>Ctrl</kbd>+<kbd>V</kbd>로 붙여 넣어 주세요. 나머지 이미지는 각 미리보기의 <b>복사</b> 버튼으로 하나씩 붙여 넣으면 됩니다. 제보하려면 GitHub 로그인이 필요합니다.</p>
+        <p class="hint alert"><strong class="hint-alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18.2A2 2 0 0 0 3.5 21h17a2 2 0 0 0 1.7-2.8L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>이미지는 이 페이지에서 GitHub로 바로 전송되지 않습니다.</strong>제보 버튼을 누르면 첫 번째 스크린샷이 클립보드에 복사되니, 열린 GitHub 화면의 본문 <b>스크린샷</b> 항목 아래에 <kbd>Ctrl</kbd>+<kbd>V</kbd>로 붙여 넣어 주세요. 나머지 이미지는 각 미리보기의 <b>복사</b> 버튼으로 하나씩 붙여 넣으면 됩니다. 제보하려면 GitHub 로그인이 필요합니다.</p>
         <div class="form-actions">
           <button class="btn primary" type="submit">GitHub Issues로 제보하기</button>
           <span class="status" id="r-status" role="status" aria-live="polite"></span>
