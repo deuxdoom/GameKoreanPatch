@@ -145,6 +145,6 @@
 - 이 패치는 개인이 만든 **비공식 팬 번역**이며 SQUARE ENIX와 관계가 없습니다. 패치 사용에 따른 문제는 SQUARE ENIX에 문의하지 말아 주세요.
 - 이 저장소에는 원본 게임 파일과 게임에서 추출한 데이터를 올리지 않습니다. 키 아트와 로고는 패치를 소개하는 용도로만 쓰며, 권리자가 요청하면 바로 내립니다.
 
-원작 공식 사이트: [PARANORMASIGHT FILE38 (일본어)](https://www.jp.square-enix.com/paranormasight/file38/)
+원작 공식 사이트: [PARANORMASIGHT FILE38 (일본어)](https://www.jp.square-enix.com/paranormasight/file38/) · Steam 스토어: [PARANORMASIGHT: The Mermaid's Curse](https://store.steampowered.com/app/2701440/PARANORMASIGHT_The_Mermaids_Curse/)
 
 <p align="center">한글 패치 제작 · <b>SAKURA</b></p>
