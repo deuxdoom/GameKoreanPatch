@@ -524,7 +524,7 @@
   <section id="report">
     <div class="wrap">
       <h2>문제 제보</h2>
-      <p class="lead">오역, 어색한 표현, 글자 잘림, 진행 문제를 알려 주세요. 작성한 내용은 <a href="https://github.com/deuxdoom/GameKoreanPatch/issues">GitHub Issues</a> 제보 양식에 채워져 열립니다.</p>
+      <p class="lead">오역, 어색한 표현, 글자 잘림, 진행 문제를 알려 주세요. 작성한 내용은 <a href="https://github.com/deuxdoom/GameKoreanPatch/issues">GitHub Issues</a>의 새 이슈 화면에 채워져 열립니다.</p>
       <form class="card report" id="report-form" novalidate>
         <div class="field-row">
           <label class="field">
@@ -559,7 +559,7 @@
           </div>
           <ul class="thumbs" id="r-thumbs" aria-live="polite"></ul>
         </div>
-        <p class="hint">이미지는 이 페이지에서 GitHub로 바로 전송되지 않습니다. 제보 버튼을 누르면 첫 번째 스크린샷이 클립보드에 복사되니, 열린 GitHub 화면의 <b>스크린샷</b> 칸에 <kbd>Ctrl</kbd>+<kbd>V</kbd>로 붙여 넣어 주세요. 나머지 이미지는 각 미리보기의 <b>복사</b> 버튼으로 하나씩 붙여 넣으면 됩니다. 제보하려면 GitHub 로그인이 필요합니다.</p>
+        <p class="hint">이미지는 이 페이지에서 GitHub로 바로 전송되지 않습니다. 제보 버튼을 누르면 첫 번째 스크린샷이 클립보드에 복사되니, 열린 GitHub 화면의 본문 <b>스크린샷</b> 항목 아래에 <kbd>Ctrl</kbd>+<kbd>V</kbd>로 붙여 넣어 주세요. 나머지 이미지는 각 미리보기의 <b>복사</b> 버튼으로 하나씩 붙여 넣으면 됩니다. 제보하려면 GitHub 로그인이 필요합니다.</p>
         <div class="form-actions">
           <button class="btn primary" type="submit">GitHub Issues로 제보하기</button>
           <span class="status" id="r-status" role="status" aria-live="polite"></span>
@@ -800,17 +800,21 @@
     if (!text) { say('설명을 적어 주세요.', true); desc.focus(); return; }
 
     var summary = (scene || text.split('\n')[0]).slice(0, 60);
+    function body(t, cutNote) {
+      return '### 문제 유형\n' + type +
+        '\n\n### 패치 버전\n' + (version || '(미기재)') +
+        '\n\n### 장면·상황\n' + (scene || '(미기재)') +
+        '\n\n### 설명\n' + t + (cutNote ? '\n\n(내용이 길어 일부가 잘렸습니다. 이어서 적어 주세요.)' : '') +
+        '\n\n### 스크린샷\n(이 아래에 스크린샷을 붙여 넣거나 끌어다 놓아 주세요)\n';
+    }
     var params = new URLSearchParams();
-    params.set('template', 'report.yml');
     params.set('title', '[' + type + '] ' + summary);
-    if (version) params.set('version', version);
-    if (scene) params.set('scene', scene);
-    params.set('description', text);
+    params.set('body', body(text, false));
     var url = REPO + '?' + params.toString();
     var cut = false;
     while (url.length > MAX_URL && text.length > 200) {
       text = text.slice(0, Math.floor(text.length * 0.8));
-      params.set('description', text + '\n\n(내용이 길어 일부가 잘렸습니다. 이어서 적어 주세요.)');
+      params.set('body', body(text, true));
       url = REPO + '?' + params.toString();
       cut = true;
     }
@@ -823,9 +827,9 @@
 
     if (files.length) {
       copyImage(files[0]).then(function () {
-        if (open()) say('첫 번째 스크린샷을 복사했습니다. 열린 GitHub 화면의 스크린샷 칸에 Ctrl+V로 붙여 넣으세요.' + (cut ? ' 설명 일부가 잘렸으니 이어서 적어 주세요.' : ''));
+        if (open()) say('첫 번째 스크린샷을 복사했습니다. 열린 GitHub 화면의 본문 ‘스크린샷’ 아래에 Ctrl+V로 붙여 넣으세요.' + (cut ? ' 설명 일부가 잘렸으니 이어서 적어 주세요.' : ''));
       }, function () {
-        if (open()) say('이미지를 자동으로 복사하지 못했습니다. 이미지 파일을 GitHub 화면의 스크린샷 칸으로 끌어다 놓아 주세요.', true);
+        if (open()) say('이미지를 자동으로 복사하지 못했습니다. 이미지 파일을 GitHub 화면의 본문으로 끌어다 놓아 주세요.', true);
       });
     } else if (open()) {
       say('GitHub 제보 화면을 열었습니다.' + (cut ? ' 설명 일부가 잘렸으니 이어서 적어 주세요.' : ''));

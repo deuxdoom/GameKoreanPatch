@@ -119,11 +119,11 @@
 
 ## 문제 제보
 
-오역, 어색한 표현, 글자 잘림, 진행 문제는 [소개 페이지의 제보 폼](https://deuxdoom.github.io/GameKoreanPatch/#report)이나 [GitHub Issues 제보 양식](https://github.com/deuxdoom/GameKoreanPatch/issues/new?template=report.yml)으로 남겨 주세요. 제보하려면 GitHub 로그인이 필요합니다. 다음 내용을 함께 적어 주시면 빠르게 확인할 수 있습니다.
+오역, 어색한 표현, 글자 잘림, 진행 문제는 [소개 페이지의 제보 폼](https://deuxdoom.github.io/GameKoreanPatch/#report)이나 [GitHub Issues](https://github.com/deuxdoom/GameKoreanPatch/issues/new)에 남겨 주세요. 제보하려면 GitHub 로그인이 필요합니다. 다음 내용을 함께 적어 주시면 빠르게 확인할 수 있습니다.
 
 - 패치 버전(배포판 파일 이름이나 시작 화면)
 - 문제가 나온 장면과 바로 전에 한 조작
-- 화면 스크린샷(양식의 스크린샷 칸에 끌어다 놓거나 붙여 넣기)
+- 화면 스크린샷(이슈 본문에 끌어다 놓거나 붙여 넣기)
 
 ## 글꼴
 
