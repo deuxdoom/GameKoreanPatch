@@ -10,13 +10,12 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="정식 v1.0.0 설치 프로그램 내려받기" width="320"></a>
+  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="한글패치 설치파일" width="320"></a>
   <a href="https://deuxdoom.github.io/GameKoreanPatch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a><br>
   <sub>PARANORMASIGHT2_KR_v1.0.0_Setup.exe · 약 187MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
 </p>
 
 <p align="center">
-  <a href="#진행-현황">진행 현황</a> ·
   <a href="#지원-환경">지원 환경</a> ·
   <a href="#설치와-사용">설치와 사용</a> ·
   <a href="#번역-기준">번역 기준</a> ·
@@ -93,7 +92,7 @@
 
 ## 적용 화면
 
-개발 중에 찍은 화면이라 최신판과 글꼴·표현이 조금 다를 수 있습니다. 이미지를 누르면 크게 볼 수 있습니다.
+이미지를 누르면 크게 볼 수 있습니다.
 
 <p align="center">
   <a href="assets/paranormasight2/screens/title.webp"><img src="assets/paranormasight2/screens/title-960.webp" alt="한국어 제목 ‘이세 인어 이야기’와 한국어 메뉴가 표시된 타이틀 화면" width="100%"></a><br>
@@ -105,28 +104,12 @@
 | <a href="assets/paranormasight2/screens/settings.webp"><img src="assets/paranormasight2/screens/settings-960.webp" alt="한국어로 옮긴 설정 화면. 언어 설정에 한국어가 선택되어 있다"></a> | <a href="assets/paranormasight2/screens/map.webp"><img src="assets/paranormasight2/screens/map-960.webp" alt="부두·와카무라 가·등대 등 한국어 장소 이름이 표시된 카메시마 지도"></a> |
 | **인물 목록** | **자료 · 카메시마 남해의 대재난** |
 | <a href="assets/paranormasight2/screens/characters.webp"><img src="assets/paranormasight2/screens/characters-960.webp" alt="한국어 인물 목록 화면에서 미나구치 유자의 소개를 연 모습"></a> | <a href="assets/paranormasight2/screens/document-disaster.webp"><img src="assets/paranormasight2/screens/document-disaster-960.webp" alt="한국어 자료 화면에서 카메시마 남해의 대재난 항목을 연 모습"></a> |
-| **자료 · 카메시마루** | **자료 · 동화 『우라시마 타로』** |
-| <a href="assets/paranormasight2/screens/document-kamessy.webp"><img src="assets/paranormasight2/screens/document-kamessy-960.webp" alt="한국어 자료 화면에서 카메시마루 항목을 연 모습"></a> | <a href="assets/paranormasight2/screens/document-urashima.webp"><img src="assets/paranormasight2/screens/document-urashima-960.webp" alt="한국어 자료 화면에서 동화 우라시마 타로 항목과 한국어 그림 설명을 연 모습"></a> |
-| **대화 장면** | **인물 등장 · 와카무라 시노부** |
-| <a href="assets/paranormasight2/screens/dialogue.webp"><img src="assets/paranormasight2/screens/dialogue-960.webp" alt="아자미가 한국어로 말하는 대화 장면"></a> | <a href="assets/paranormasight2/screens/intro-shinobu.webp"><img src="assets/paranormasight2/screens/intro-shinobu-960.webp" alt="‘섬의 유력자 와카무라 시노부’ 한국어 인물 소개가 표시된 장면"></a> |
-
-<p align="center">
-  <a href="assets/paranormasight2/screens/warning.webp"><img src="assets/paranormasight2/screens/warning-960.webp" alt="한국어로 옮긴 시작 안내 문구와 분홍색 ‘한글 패치 제작자 : SAKURA’ 표기" width="100%"></a><br>
-  <sub>시작 안내 · 한글 패치 제작자 표기</sub>
-</p>
-
-## 진행 현황
-
-| 단계 | 상태 | 내용 |
-|---|---|---|
-| 번역 | ✅ **전부 완료** | 본편·선택지·자료/머리글·인물·차트·미니게임·엔딩·극장 등 **14,156행 전체**, 별도 스태프 크레디트 433행 |
-| 일괄 검수·수정 | ✅ **전부 완료** | 전체 행을 일본어 원문과 대조해 오역, 인물별 호칭·말투, 고유명사 표기, 단서·숫자·제어문 점검 |
-| 이미지 한글화 | ✅ **완료** | 진행에 필요한 타이틀·안내·자료의 핵심 이미지 14종 한글화·검수, 인물 소개 이름 19곳 |
-| 한국어 입력 | ✅ **완료** | 이름·단서 입력 8곳에 한국어 정답 35개 연결, 실제 게임에서 한국어 키보드 입력 확인 |
-| 글꼴 결정 | ✅ **완료** | 대사·메뉴, 인물 이름, 자료, 타이틀별 글꼴 확정 |
-| 정식 릴리스·사용자 제보 | ✅ v1.0.0 배포 | 제보된 자료 배치·이름 표시·용어 문제를 반영, 후속 제보 접수 |
-| 배포용 설치 프로그램 | ✅ 완료 | 게임 폴더 선택·기본 설치, .bak 백업과 제거 시 복원 |
-
+| **자료 · 카메시마루** | **자료 · 이세 이야기** |
+| <a href="assets/paranormasight2/screens/document-kamessy.webp"><img src="assets/paranormasight2/screens/document-kamessy-960.webp" alt="한국어 자료 화면에서 카메시마루 항목을 연 모습"></a> | <a href="assets/paranormasight2/screens/document-ise.webp"><img src="assets/paranormasight2/screens/document-ise-960.webp" alt="한국어 자료 화면에서 이세 이야기 항목을 연 모습. 그림 두루마리의 세로쓰기 글귀도 한국어로 옮겼다"></a> |
+| **자료 · 여름의 대삼각형** | **인물 등장 · 시키 유메코** |
+| <a href="assets/paranormasight2/screens/document-summer-triangle.webp"><img src="assets/paranormasight2/screens/document-summer-triangle-960.webp" alt="한국어 자료 화면에서 여름의 대삼각형 항목을 연 모습. 성도의 별·별자리 이름도 한국어로 옮겼다"></a> | <a href="assets/paranormasight2/screens/intro-yumeko.webp"><img src="assets/paranormasight2/screens/intro-yumeko-960.webp" alt="‘도쿄의 주부 시키 유메코’ 한국어 인물 소개가 표시된 장면"></a> |
+| **대화 장면** | **시작 안내 · 한글 패치 제작자 표기** |
+| <a href="assets/paranormasight2/screens/dialogue-tsukasa.webp"><img src="assets/paranormasight2/screens/dialogue-tsukasa-960.webp" alt="츠카사가 한국어로 말하는 대화 장면"></a> | <a href="assets/paranormasight2/screens/warning.webp"><img src="assets/paranormasight2/screens/warning-960.webp" alt="한국어로 옮긴 시작 안내 문구와 분홍색 ‘한글 패치 제작자 : SAKURA’ 표기"></a> |
 
 ## 지원 환경
 

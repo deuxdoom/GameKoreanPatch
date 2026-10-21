@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>이세 인어 이야기 한글 패치</title>
-<meta name="description" content="파라노마사이트 FILE38: 이세 인어 이야기(PARANORMASIGHT: The Mermaid's Curse) 비공식 한글 패치. 진행 현황, 지원 환경, 설치 안내, 번역 기준.">
+<meta name="description" content="파라노마사이트 FILE38: 이세 인어 이야기(PARANORMASIGHT: The Mermaid's Curse) 비공식 한글 패치. 설치 파일, 지원 환경, 설치 안내, 번역 기준.">
 <meta name="theme-color" content="#06181b">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
@@ -83,6 +83,15 @@
     pointer-events: none;
   }
   .intro { position: relative; z-index: 1; margin-top: -48px; padding-bottom: 8px; }
+  .intro-heading { display: grid; grid-template-columns: minmax(0, 1fr) 320px; grid-template-areas: "meta ." "title download" "orig ."; gap: 6px 32px; align-items: center; margin-bottom: 20px; }
+  .intro-meta { grid-area: meta; min-width: 0; }
+  .intro-series { margin: 6px 0 0; font-family: var(--serif); font-size: clamp(15px, 1.9vw, 22px); font-weight: 600; color: var(--text); line-height: 1.3; }
+  .intro-heading h1 { grid-area: title; min-width: 0; margin: 0; font-size: clamp(30px, 3.8vw, 44px); line-height: 64px; }
+  .intro-heading .orig { grid-area: orig; margin: 0; }
+  .patch-download { grid-area: download; display: block; width: 320px; max-width: 100%; justify-self: end; border-radius: 999px; transition: filter .15s ease, transform .15s ease; }
+  .patch-download img { width: 100%; height: auto; }
+  .patch-download:hover { filter: brightness(1.08); transform: translateY(-1px); }
+  .patch-download:focus-visible { outline: 3px solid var(--foam); outline-offset: 5px; }
   .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.08em; color: var(--glow); text-transform: uppercase; }
   .kicker::before { content: ""; width: 22px; height: 1px; background: var(--glow); }
   h1 {
@@ -95,16 +104,6 @@
   .credit { color: var(--text); }
   .credit b { color: #ff8fbf; font-weight: 700; }
 
-  .notice {
-    display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
-    border: 1px solid rgba(196, 51, 58, 0.45); background: linear-gradient(135deg, rgba(196, 51, 58, 0.14), rgba(196, 51, 58, 0.04));
-    border-radius: var(--radius); padding: 16px 18px; margin: 14px 0 22px;
-  }
-  .notice .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ember); margin-top: 8px; box-shadow: 0 0 0 4px rgba(196, 51, 58, 0.2); }
-  .notice strong { color: var(--foam); }
-  .notice p { margin: 0; }
-
-  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
   .btn {
     display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; font-size: 15px;
     padding: 11px 18px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--foam);
@@ -117,7 +116,7 @@
 
   /* translation & review complete */
   .complete {
-    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; margin: 4px 0 0;
+    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; margin: 14px 0 0;
     padding: 22px 24px; border-radius: 18px; border: 1px solid rgba(127, 216, 203, 0.55);
     background: linear-gradient(135deg, rgba(127, 216, 203, 0.16), rgba(16, 56, 61, 0.55) 55%, rgba(11, 42, 46, 0.6));
     box-shadow: 0 0 0 1px rgba(127, 216, 203, 0.08), 0 14px 40px rgba(0, 0, 0, 0.35), inset 0 0 40px rgba(127, 216, 203, 0.07);
@@ -133,7 +132,7 @@
 
   /* request for translation feedback */
   .request {
-    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; margin: 14px 0 0;
+    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; margin: 4px 0 0;
     padding: 20px 24px; border-radius: 18px; border: 1px solid rgba(255, 143, 191, 0.45);
     background: linear-gradient(135deg, rgba(255, 143, 191, 0.12), rgba(16, 56, 61, 0.5) 60%, rgba(11, 42, 46, 0.6));
   }
@@ -146,7 +145,7 @@
   .request-btn:hover { background: rgba(255, 143, 191, 0.24); }
 
   /* stats */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 36px 0 8px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0 8px; }
   .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; background: rgba(11, 42, 46, 0.5); }
   .stat b { display: block; font-family: var(--serif); font-size: clamp(24px, 3.2vw, 34px); color: var(--foam); line-height: 1.2; }
   .stat span { color: var(--muted); font-size: 14px; }
@@ -338,6 +337,9 @@
   .status.warn { color: var(--sun); }
 
   @media (max-width: 860px) {
+    .intro-heading { grid-template-columns: 1fr; grid-template-areas: "meta" "title" "orig" "download"; }
+    .intro-heading h1 { line-height: 1.3; }
+    .patch-download { justify-self: start; margin-top: 14px; }
     .about, .grid-2, .rules, .field-row, .cast { grid-template-columns: 1fr; }
     .carousel { --slide: 88vw; --gap: 12px; }
     .about figure { display: none; }
@@ -355,6 +357,7 @@
     .cast-pic { width: 84px; height: 100px; }
     th, td { padding: 10px 12px; }
     section { padding-top: 44px; }
+    .dots { gap: 8px; padding: 10px 14px; }
   }
 </style>
 </head>
@@ -367,7 +370,6 @@
       <a href="#about">소개</a>
       <a href="#original">원작 소개</a>
       <a href="#screens">적용 화면</a>
-      <a href="#progress">진행 현황</a>
       <a href="#support">지원·설치</a>
       <a href="#policy">번역 기준</a>
       <a href="#faq">자주 묻는 질문</a>
@@ -385,20 +387,17 @@
   </div>
 
   <div class="wrap intro">
-    <div class="kicker">비공식 한국어 번역 패치</div>
-    <h1><small>파라노마사이트 FILE38</small>이세 인어 이야기 한글 패치</h1>
-    <p class="orig">PARANORMASIGHT: The Mermaid's Curse · パラノマサイト FILE38 伊勢人魚物語<br>
-      <span class="credit">한글 패치 제작 <b>SAKURA</b></span></p>
-
-    <div class="complete" role="note">
-      <div class="complete-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-      <div>
-        <p class="complete-title">텍스트 <b>14,156행</b> 전부 번역·검수 완료</p>
-        <p class="complete-desc">게임 안 텍스트를 하나도 빠짐없이 번역하고, 모두 일본어 원문과 대조해 검수했습니다. 진행에 필요한 그림 속 글자도 한글화와 검수를 마쳤습니다.</p>
-        <ul class="complete-tags" aria-label="번역·검수한 범위">
-          <li>본편</li><li>선택지</li><li>자료·머리글</li><li>인물</li><li>차트</li><li>미니게임</li><li>엔딩</li><li>극장</li><li>스태프 크레디트 433행</li><li>핵심 이미지 14종</li>
-        </ul>
+    <div class="intro-heading">
+      <div class="intro-meta">
+        <div class="kicker">비공식 한국어 번역 패치</div>
+        <p class="intro-series">파라노마사이트 FILE38</p>
       </div>
+      <h1>이세 인어 이야기 한글 패치</h1>
+      <p class="orig">PARANORMASIGHT: The Mermaid's Curse · パラノマサイト FILE38 伊勢人魚物語<br>
+        <span class="credit">한글 패치 제작 <b>SAKURA</b></span></p>
+      <a class="patch-download" href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe" download>
+        <img src="assets/paranormasight2/button-download-v1.svg" width="640" height="128" alt="한글패치 설치파일">
+      </a>
     </div>
 
     <div class="request" role="note">
@@ -411,21 +410,15 @@
       </div>
     </div>
 
-    <div class="notice" role="note">
-      <div class="dot" aria-hidden="true"></div>
-      <p><strong>정식 v1.0.0을 배포합니다.</strong> 아래 버튼에서 설치 프로그램을 내려받아 실행해 주세요. 게임 폴더를 선택하면 설치되며 덮어쓰는 파일은 <code>.bak</code>으로 보존합니다. 자세한 방법은 <a href="#support">설치 방법</a>을 확인해 주세요.</p>
-    </div>
-
-    <div class="actions">
-      <a class="btn primary" href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg>
-        v1.0.0 설치 프로그램
-      </a>
-      <a class="btn" href="#support">설치 방법</a>
-      <a class="btn" href="https://github.com/deuxdoom/GameKoreanPatch">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub 저장소
-      </a>
+    <div class="complete" role="note">
+      <div class="complete-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <div>
+        <p class="complete-title">텍스트 <b>14,156행</b> 전부 번역·검수 완료</p>
+        <p class="complete-desc">게임 안 텍스트를 하나도 빠짐없이 번역하고, 모두 일본어 원문과 대조해 검수했습니다. 진행에 필요한 그림 속 글자도 한글화와 검수를 마쳤습니다.</p>
+        <ul class="complete-tags" aria-label="번역·검수한 범위">
+          <li>본편</li><li>선택지</li><li>자료·머리글</li><li>인물</li><li>차트</li><li>미니게임</li><li>엔딩</li><li>극장</li><li>스태프 크레디트 433행</li><li>핵심 이미지 14종</li>
+        </ul>
+      </div>
     </div>
 
     <div class="stats" aria-label="번역 분량">
@@ -515,21 +508,22 @@
   <section id="screens">
     <div class="wrap">
       <h2>적용 화면</h2>
-      <p class="lead">개발 중에 찍은 화면이라 최신판과 글꼴·표현이 조금 다를 수 있습니다. 이미지를 누르면 크게 보이고, 다시 누르면 돌아갑니다.</p>
+      <p class="lead">이미지를 누르면 크게 보이고, 다시 누르면 돌아갑니다.</p>
     </div>
     <div class="carousel" id="carousel" aria-roledescription="캐러셀" aria-label="적용 화면">
     <div class="viewport">
       <ul class="track" id="track">
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="1 / 10: 타이틀 화면"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/title.webp" tabindex="-1"><img src="assets/paranormasight2/screens/title-960.webp" srcset="assets/paranormasight2/screens/title-960.webp 960w, assets/paranormasight2/screens/title.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" fetchpriority="high" alt="한국어 제목 ‘이세 인어 이야기’와 한국어 메뉴가 표시된 타이틀 화면"></button><p class="cap">타이틀 화면</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="2 / 10: 설정 · 언어 설정"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/settings.webp" tabindex="-1"><img src="assets/paranormasight2/screens/settings-960.webp" srcset="assets/paranormasight2/screens/settings-960.webp 960w, assets/paranormasight2/screens/settings.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어로 옮긴 설정 화면. 언어 설정에 한국어가 선택되어 있다"></button><p class="cap">설정 · 언어 설정</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="3 / 10: 카메시마 지도"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/map.webp" tabindex="-1"><img src="assets/paranormasight2/screens/map-960.webp" srcset="assets/paranormasight2/screens/map-960.webp 960w, assets/paranormasight2/screens/map.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="부두·와카무라 가·등대 등 한국어 장소 이름이 표시된 카메시마 지도"></button><p class="cap">카메시마 지도</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="4 / 10: 인물 목록"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/characters.webp" tabindex="-1"><img src="assets/paranormasight2/screens/characters-960.webp" srcset="assets/paranormasight2/screens/characters-960.webp 960w, assets/paranormasight2/screens/characters.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 인물 목록 화면에서 미나구치 유자의 소개를 연 모습"></button><p class="cap">인물 목록</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="5 / 10: 자료 · 카메시마 남해의 대재난"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-disaster.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-disaster-960.webp" srcset="assets/paranormasight2/screens/document-disaster-960.webp 960w, assets/paranormasight2/screens/document-disaster.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 카메시마 남해의 대재난 항목을 연 모습"></button><p class="cap">자료 · 카메시마 남해의 대재난</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="6 / 10: 자료 · 카메시마루"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-kamessy.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-kamessy-960.webp" srcset="assets/paranormasight2/screens/document-kamessy-960.webp 960w, assets/paranormasight2/screens/document-kamessy.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 카메시마루 항목을 연 모습"></button><p class="cap">자료 · 카메시마루</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="7 / 10: 자료 · 동화 『우라시마 타로』"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-urashima.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-urashima-960.webp" srcset="assets/paranormasight2/screens/document-urashima-960.webp 960w, assets/paranormasight2/screens/document-urashima.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 동화 우라시마 타로 항목과 한국어 그림 설명을 연 모습"></button><p class="cap">자료 · 동화 『우라시마 타로』</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="8 / 10: 대화 장면"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/dialogue.webp" tabindex="-1"><img src="assets/paranormasight2/screens/dialogue-960.webp" srcset="assets/paranormasight2/screens/dialogue-960.webp 960w, assets/paranormasight2/screens/dialogue.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="아자미가 한국어로 말하는 대화 장면"></button><p class="cap">대화 장면</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="9 / 10: 인물 등장 · 와카무라 시노부"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/intro-shinobu.webp" tabindex="-1"><img src="assets/paranormasight2/screens/intro-shinobu-960.webp" srcset="assets/paranormasight2/screens/intro-shinobu-960.webp 960w, assets/paranormasight2/screens/intro-shinobu.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="‘섬의 유력자 와카무라 시노부’ 한국어 인물 소개가 표시된 장면"></button><p class="cap">인물 등장 · 와카무라 시노부</p></li>
-        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="10 / 10: 시작 안내 · 한글 패치 제작자 표기"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/warning.webp" tabindex="-1"><img src="assets/paranormasight2/screens/warning-960.webp" srcset="assets/paranormasight2/screens/warning-960.webp 960w, assets/paranormasight2/screens/warning.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어로 옮긴 시작 안내 문구와 분홍색 ‘한글 패치 제작자 : SAKURA’ 표기"></button><p class="cap">시작 안내 · 한글 패치 제작자 표기</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="1 / 11: 타이틀 화면"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/title.webp" tabindex="-1"><img src="assets/paranormasight2/screens/title-960.webp" srcset="assets/paranormasight2/screens/title-960.webp 960w, assets/paranormasight2/screens/title.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" fetchpriority="high" alt="한국어 제목 ‘이세 인어 이야기’와 한국어 메뉴가 표시된 타이틀 화면"></button><p class="cap">타이틀 화면</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="2 / 11: 설정 · 언어 설정"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/settings.webp" tabindex="-1"><img src="assets/paranormasight2/screens/settings-960.webp" srcset="assets/paranormasight2/screens/settings-960.webp 960w, assets/paranormasight2/screens/settings.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어로 옮긴 설정 화면. 언어 설정에 한국어가 선택되어 있다"></button><p class="cap">설정 · 언어 설정</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="3 / 11: 카메시마 지도"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/map.webp" tabindex="-1"><img src="assets/paranormasight2/screens/map-960.webp" srcset="assets/paranormasight2/screens/map-960.webp 960w, assets/paranormasight2/screens/map.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="부두·와카무라 가·등대 등 한국어 장소 이름이 표시된 카메시마 지도"></button><p class="cap">카메시마 지도</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="4 / 11: 인물 목록"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/characters.webp" tabindex="-1"><img src="assets/paranormasight2/screens/characters-960.webp" srcset="assets/paranormasight2/screens/characters-960.webp 960w, assets/paranormasight2/screens/characters.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 인물 목록 화면에서 미나구치 유자의 소개를 연 모습"></button><p class="cap">인물 목록</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="5 / 11: 자료 · 카메시마 남해의 대재난"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-disaster.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-disaster-960.webp" srcset="assets/paranormasight2/screens/document-disaster-960.webp 960w, assets/paranormasight2/screens/document-disaster.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 카메시마 남해의 대재난 항목을 연 모습"></button><p class="cap">자료 · 카메시마 남해의 대재난</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="6 / 11: 자료 · 카메시마루"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-kamessy.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-kamessy-960.webp" srcset="assets/paranormasight2/screens/document-kamessy-960.webp 960w, assets/paranormasight2/screens/document-kamessy.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 카메시마루 항목을 연 모습"></button><p class="cap">자료 · 카메시마루</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="7 / 11: 자료 · 이세 이야기"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-ise.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-ise-960.webp" srcset="assets/paranormasight2/screens/document-ise-960.webp 960w, assets/paranormasight2/screens/document-ise.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 이세 이야기 항목을 연 모습. 그림 두루마리의 세로쓰기 글귀도 한국어로 옮겼다"></button><p class="cap">자료 · 이세 이야기</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="8 / 11: 자료 · 여름의 대삼각형"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/document-summer-triangle.webp" tabindex="-1"><img src="assets/paranormasight2/screens/document-summer-triangle-960.webp" srcset="assets/paranormasight2/screens/document-summer-triangle-960.webp 960w, assets/paranormasight2/screens/document-summer-triangle.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어 자료 화면에서 여름의 대삼각형 항목을 연 모습. 성도의 별·별자리 이름도 한국어로 옮겼다"></button><p class="cap">자료 · 여름의 대삼각형</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="9 / 11: 인물 등장 · 시키 유메코"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/intro-yumeko.webp" tabindex="-1"><img src="assets/paranormasight2/screens/intro-yumeko-960.webp" srcset="assets/paranormasight2/screens/intro-yumeko-960.webp 960w, assets/paranormasight2/screens/intro-yumeko.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="‘도쿄의 주부 시키 유메코’ 한국어 인물 소개가 표시된 장면"></button><p class="cap">인물 등장 · 시키 유메코</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="10 / 11: 대화 장면"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/dialogue-tsukasa.webp" tabindex="-1"><img src="assets/paranormasight2/screens/dialogue-tsukasa-960.webp" srcset="assets/paranormasight2/screens/dialogue-tsukasa-960.webp 960w, assets/paranormasight2/screens/dialogue-tsukasa.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="츠카사가 한국어로 말하는 대화 장면"></button><p class="cap">대화 장면</p></li>
+        <li class="slide" role="group" aria-roledescription="슬라이드" aria-label="11 / 11: 시작 안내 · 한글 패치 제작자 표기"><button type="button" class="slide-btn" data-full="assets/paranormasight2/screens/warning.webp" tabindex="-1"><img src="assets/paranormasight2/screens/warning-960.webp" srcset="assets/paranormasight2/screens/warning-960.webp 960w, assets/paranormasight2/screens/warning.webp 1920w" sizes="(max-width: 860px) 88vw, 820px" width="1920" height="1080" loading="lazy" alt="한국어로 옮긴 시작 안내 문구와 분홍색 ‘한글 패치 제작자 : SAKURA’ 표기"></button><p class="cap">시작 안내 · 한글 패치 제작자 표기</p></li>
       </ul>
     </div>
     <div class="controls">
@@ -540,31 +534,15 @@
         <button type="button" class="pip" aria-label="인물 목록 보기"><span class="fill"></span></button>
         <button type="button" class="pip" aria-label="자료 · 카메시마 남해의 대재난 보기"><span class="fill"></span></button>
         <button type="button" class="pip" aria-label="자료 · 카메시마루 보기"><span class="fill"></span></button>
-        <button type="button" class="pip" aria-label="자료 · 동화 『우라시마 타로』 보기"><span class="fill"></span></button>
+        <button type="button" class="pip" aria-label="자료 · 이세 이야기 보기"><span class="fill"></span></button>
+        <button type="button" class="pip" aria-label="자료 · 여름의 대삼각형 보기"><span class="fill"></span></button>
+        <button type="button" class="pip" aria-label="인물 등장 · 시키 유메코 보기"><span class="fill"></span></button>
         <button type="button" class="pip" aria-label="대화 장면 보기"><span class="fill"></span></button>
-        <button type="button" class="pip" aria-label="인물 등장 · 와카무라 시노부 보기"><span class="fill"></span></button>
         <button type="button" class="pip" aria-label="시작 안내 · 한글 패치 제작자 표기 보기"><span class="fill"></span></button>
       </div>
       <button type="button" class="play" id="play" aria-label="자동 넘김 일시 정지"><span class="i-pause" aria-hidden="true"></span></button>
     </div>
   </div>
-  </section>
-
-  <section id="progress">
-    <div class="wrap">
-      <h2>진행 현황</h2>
-      <p class="lead">단계별 진행 상황과 지금 위치입니다.</p>
-      <ol class="steps">
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>번역</h3><p>본편·선택지·자료/머리글·인물·차트·미니게임·엔딩·극장 등 <b>14,156행 전체</b>, 별도 스태프 크레디트 433행</p></div><span class="chip">전부 완료</span></li>
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>일괄 검수·수정</h3><p>전체 행을 일본어 원문과 대조해 오역, 인물별 호칭·말투, 고유명사 표기, 단서·숫자·제어문 점검</p></div><span class="chip">전부 완료</span></li>
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>이미지 한글화</h3><p>진행에 필요한 타이틀·안내·자료의 핵심 이미지 14종 한글화·검수, 인물 소개 이름 19곳</p></div><span class="chip">완료</span></li>
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>한국어 입력</h3><p>이름·단서 입력 8곳에 한국어 정답 35개 연결, 실제 게임에서 한국어 키보드 입력 확인</p></div><span class="chip">완료</span></li>
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>글꼴 결정</h3><p>대사·메뉴, 인물 이름, 자료, 타이틀별 글꼴 확정</p></div><span class="chip">완료</span></li>
-        <li class="step done"><span class="mark" aria-hidden="true">✓</span><div><h3>정식 v1.0.0 배포</h3><p>자료 배치·이름 표시·용어 제보 반영, 후속 제보 접수</p></div><span class="chip">배포</span></li>
-        <li class="step done"><span class="mark" aria-hidden="true">7</span><div><h3>배포용 설치 프로그램</h3><p>게임 폴더 선택·기본 설치, .bak 백업과 제거 시 복원</p></div><span class="chip">완료</span></li>
-      </ol>
-      <p class="footnote">정식 v1.0.0 설치 프로그램을 제공합니다. 게임 실행 중 발견한 문제는 계속 제보해 주세요.</p>
-    </div>
   </section>
 
   <section id="support">
@@ -643,7 +621,7 @@
       <p class="lead">패치를 쓰기 전에 알아 두면 좋은 내용입니다.</p>
       <details>
         <summary>어디서 내려받나요?</summary>
-        <div><p>위의 <b>v1.0.0 설치 프로그램</b> 버튼이나 <a href="https://github.com/deuxdoom/GameKoreanPatch/releases">GitHub Releases</a>에서 내려받을 수 있습니다. 정식 v1.0.0 설치 프로그램을 제공합니다.</p></div>
+        <div><p>상단의 <b>한글패치 설치파일</b> 버튼이나 <a href="https://github.com/deuxdoom/GameKoreanPatch/releases">GitHub Releases</a>에서 내려받을 수 있습니다. 정식 v1.0.0 설치 파일을 제공합니다.</p></div>
       </details>
       <details>
         <summary>패치를 지우고 원래대로 되돌리고 싶어요.</summary>
