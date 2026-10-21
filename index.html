@@ -95,7 +95,7 @@
   .notice {
     display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
     border: 1px solid rgba(196, 51, 58, 0.45); background: linear-gradient(135deg, rgba(196, 51, 58, 0.14), rgba(196, 51, 58, 0.04));
-    border-radius: var(--radius); padding: 16px 18px; margin: 8px 0 22px;
+    border-radius: var(--radius); padding: 16px 18px; margin: 14px 0 22px;
   }
   .notice .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ember); margin-top: 8px; box-shadow: 0 0 0 4px rgba(196, 51, 58, 0.2); }
   .notice strong { color: var(--foam); }
@@ -114,7 +114,7 @@
 
   /* translation & review complete */
   .complete {
-    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; margin: 32px 0 0;
+    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; margin: 4px 0 0;
     padding: 22px 24px; border-radius: 18px; border: 1px solid rgba(127, 216, 203, 0.55);
     background: linear-gradient(135deg, rgba(127, 216, 203, 0.16), rgba(16, 56, 61, 0.55) 55%, rgba(11, 42, 46, 0.6));
     box-shadow: 0 0 0 1px rgba(127, 216, 203, 0.08), 0 14px 40px rgba(0, 0, 0, 0.35), inset 0 0 40px rgba(127, 216, 203, 0.07);
@@ -143,7 +143,7 @@
   .request-btn:hover { background: rgba(255, 143, 191, 0.24); }
 
   /* stats */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0 8px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 36px 0 8px; }
   .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; background: rgba(11, 42, 46, 0.5); }
   .stat b { display: block; font-family: var(--serif); font-size: clamp(24px, 3.2vw, 34px); color: var(--foam); line-height: 1.2; }
   .stat span { color: var(--muted); font-size: 14px; }
@@ -383,19 +383,6 @@
     <p class="orig">PARANORMASIGHT: The Mermaid's Curse · パラノマサイト FILE38 伊勢人魚物語<br>
       <span class="credit">한글 패치 제작 <b>SAKURA</b></span></p>
 
-    <div class="notice" role="note">
-      <div class="dot" aria-hidden="true"></div>
-      <p><strong>아직 공개 배포판이 없습니다.</strong> 번역과 일괄 검수는 모두 마쳤고, 지금은 게임에 쓸 한글 글꼴을 고르는 단계입니다. 시험판은 제작자가 직접 화면을 확인하는 용도로만 쓰고 있으며 내려받을 수 없습니다. 배포판을 공개하면 이 페이지와 GitHub Releases에 함께 안내합니다.</p>
-    </div>
-
-    <div class="actions">
-      <a class="btn primary" href="#progress">진행 현황 보기</a>
-      <a class="btn" href="https://github.com/deuxdoom/GameKoreanPatch">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub 저장소
-      </a>
-    </div>
-
     <div class="complete" role="note">
       <div class="complete-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
       <div>
@@ -415,6 +402,19 @@
         <p><strong>오역이나 어색한 표현, 더 나은 번역이 떠오르면 언제든 적극적으로 제보해 주세요.</strong> 보내 주신 의견은 하나하나 확인하겠습니다.</p>
         <a class="btn request-btn" href="#report">오역·개선 의견 제보하기</a>
       </div>
+    </div>
+
+    <div class="notice" role="note">
+      <div class="dot" aria-hidden="true"></div>
+      <p><strong>아직 공개 배포판이 없습니다.</strong> 번역과 일괄 검수는 모두 마쳤고, 지금은 게임에 쓸 한글 글꼴을 고르는 단계입니다. 시험판은 제작자가 직접 화면을 확인하는 용도로만 쓰고 있으며 내려받을 수 없습니다. 배포판을 공개하면 이 페이지와 GitHub Releases에 함께 안내합니다.</p>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary" href="#progress">진행 현황 보기</a>
+      <a class="btn" href="https://github.com/deuxdoom/GameKoreanPatch">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub 저장소
+      </a>
     </div>
 
     <div class="stats" aria-label="번역 분량">
