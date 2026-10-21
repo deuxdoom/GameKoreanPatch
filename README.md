@@ -64,14 +64,14 @@
 
 | 인물 | 소개 |
 |---|---|
-| **미나쿠치 유자**<br><sub>水口 勇佐 · Yuza Minakuchi</sub> | 카메시마에 사는, 성실하면서도 마이페이스인 소년. 은퇴한 할머니의 뒤를 이어 해녀 일을 시작했다. 5년 전 해난 사고로 부모님을 잃었고, 그때 어떤 신비한 일을 겪었다. |
-| **쿠모이 아자미**<br><sub>雲居 アザミ · Azami Kumoi</sub> | 미나쿠치 유자의 소꿉친구이자 단짝. 세상을 떠난 아버지의 어선을 물려받아 어부로 일한다. 남을 잘 챙겨 주변에서 의지하는 타입으로, 고향 사랑만큼은 누구보다 강하다고 자부한다. |
-| **시라나미 사토**<br><sub>白浪 里 · Sato Shiranami</sub> | 몇 달 전 카메시마에 흘러들어 온 수수께끼의 소녀. 기억을 잃은 것 같은데……. |
-| **아와오 츠카사**<br><sub>沫緒 つかさ · Tsukasa Awao</sub> | 카메시마에서 나고 자란 밝고 활발한 소녀. 지금은 고등학교에 다니려고 본토에서 하숙하고 있다. 미나쿠치 유자, 쿠모이 아자미와는 소꿉친구. 고향에 내려온 동안 시라나미 사토와 친해졌다. |
-| **아르나브 바넘**<br><sub>アルナーヴ・バーナム · Arnav Barnum</sub> | 낭만을 찾아 일본에 온 미국인. 본업은 판타지 작가 겸 오컬트 라이터. 아무래도 이세시마에서 인어를 찾고 있는 모양이다. 애칭은 ‘아비’. 40세. 독신. |
-| **키르케 루나라이트**<br><sub>キルケ・ルナーライト · Circe Lunarlight</sub> | 《엑소시스트》 소녀. 영국 명문가 출신으로 일본에 유학 중이다. 일본의 전승과 오컬트에 밝아, 친척인 아비의 부탁으로 가이드를 맡고 있다. |
-| **시키 유메코**<br><sub>志貴 結命子 · Yumeko Shiki</sub> | 자칭 도쿄의 주부. 무언가를 조사하고 있는 모양인데……. |
-| **키류 소도**<br><sub>霧生 双奴 · Sodo Kiryu</sub> | 시키 유메코의 조수로 일하는 청년. 범상치 않은 분위기를 풍긴다. |
+| <img src="assets/paranormasight2/characters/yuza.webp" alt="미나쿠치 유자" width="120"><br>**미나쿠치 유자**<br><sub>水口 勇佐 · Yuza Minakuchi</sub> | 카메시마에 사는, 성실하면서도 마이페이스인 소년. 은퇴한 할머니의 뒤를 이어 해녀 일을 시작했다. 5년 전 해난 사고로 부모님을 잃었고, 그때 어떤 신비한 일을 겪었다. |
+| <img src="assets/paranormasight2/characters/azami.webp" alt="쿠모이 아자미" width="120"><br>**쿠모이 아자미**<br><sub>雲居 アザミ · Azami Kumoi</sub> | 미나쿠치 유자의 소꿉친구이자 단짝. 세상을 떠난 아버지의 어선을 물려받아 어부로 일한다. 남을 잘 챙겨 주변에서 의지하는 타입으로, 고향 사랑만큼은 누구보다 강하다고 자부한다. |
+| <img src="assets/paranormasight2/characters/sato.webp" alt="시라나미 사토" width="120"><br>**시라나미 사토**<br><sub>白浪 里 · Sato Shiranami</sub> | 몇 달 전 카메시마에 흘러들어 온 수수께끼의 소녀. 기억을 잃은 것 같은데……. |
+| <img src="assets/paranormasight2/characters/tsukasa.webp" alt="아와오 츠카사" width="120"><br>**아와오 츠카사**<br><sub>沫緒 つかさ · Tsukasa Awao</sub> | 카메시마에서 나고 자란 밝고 활발한 소녀. 지금은 고등학교에 다니려고 본토에서 하숙하고 있다. 미나쿠치 유자, 쿠모이 아자미와는 소꿉친구. 고향에 내려온 동안 시라나미 사토와 친해졌다. |
+| <img src="assets/paranormasight2/characters/avi.webp" alt="아르나브 바넘" width="120"><br>**아르나브 바넘**<br><sub>アルナーヴ・バーナム · Arnav Barnum</sub> | 낭만을 찾아 일본에 온 미국인. 본업은 판타지 작가 겸 오컬트 라이터. 아무래도 이세시마에서 인어를 찾고 있는 모양이다. 애칭은 ‘아비’. 40세. 독신. |
+| <img src="assets/paranormasight2/characters/circe.webp" alt="키르케 루나라이트" width="120"><br>**키르케 루나라이트**<br><sub>キルケ・ルナーライト · Circe Lunarlight</sub> | 《엑소시스트》 소녀. 영국 명문가 출신으로 일본에 유학 중이다. 일본의 전승과 오컬트에 밝아, 친척인 아비의 부탁으로 가이드를 맡고 있다. |
+| <img src="assets/paranormasight2/characters/yumeko.webp" alt="시키 유메코" width="120"><br>**시키 유메코**<br><sub>志貴 結命子 · Yumeko Shiki</sub> | 자칭 도쿄의 주부. 무언가를 조사하고 있는 모양인데……. |
+| <img src="assets/paranormasight2/characters/sodo.webp" alt="키류 소도" width="120"><br>**키류 소도**<br><sub>霧生 双奴 · Sodo Kiryu</sub> | 시키 유메코의 조수로 일하는 청년. 범상치 않은 분위기를 풍긴다. |
 
 </details>
 

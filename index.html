@@ -230,7 +230,9 @@
   .synopsis p { margin: 0; }
   .synopsis em { font-style: normal; font-weight: 900; color: #e5484d; font-size: 1.35em; text-shadow: 0 0 18px rgba(229, 72, 77, 0.35); }
   .cast { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .cast li { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: rgba(4, 16, 18, 0.45); }
+  .cast li { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: start; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: rgba(4, 16, 18, 0.45); }
+  .cast-pic { width: 112px; height: 132px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: radial-gradient(circle at 50% 30%, rgba(127, 216, 203, 0.2), rgba(4, 16, 18, 0.7) 75%); }
+  .cast-pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
   .cast h3 { margin: 0; font-size: 18px; }
   .orig-name { display: block; font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
   .cast p { margin: 0; font-size: 15px; color: var(--text); }
@@ -346,6 +348,8 @@
     .step { grid-template-columns: 26px 1fr; }
     .step .chip { grid-column: 2; justify-self: start; }
     table { min-width: 0; font-size: 14px; }
+    .cast li { grid-template-columns: 84px 1fr; gap: 12px; padding: 12px; }
+    .cast-pic { width: 84px; height: 100px; }
     th, td { padding: 10px 12px; }
     section { padding-top: 44px; }
   }
@@ -463,22 +467,22 @@
         <summary>등장인물</summary>
         <div>
           <ul class="cast">
-            <li><h3>미나쿠치 유자</h3><span class="orig-name">水口 勇佐 · Yuza Minakuchi</span>
-              <p>카메시마에 사는, 성실하면서도 마이페이스인 소년. 은퇴한 할머니의 뒤를 이어 해녀 일을 시작했다. 5년 전 해난 사고로 부모님을 잃었고, 그때 어떤 신비한 일을 겪었다.</p></li>
-            <li><h3>쿠모이 아자미</h3><span class="orig-name">雲居 アザミ · Azami Kumoi</span>
-              <p>미나쿠치 유자의 소꿉친구이자 단짝. 세상을 떠난 아버지의 어선을 물려받아 어부로 일한다. 남을 잘 챙겨 주변에서 의지하는 타입으로, 고향 사랑만큼은 누구보다 강하다고 자부한다.</p></li>
-            <li><h3>시라나미 사토</h3><span class="orig-name">白浪 里 · Sato Shiranami</span>
-              <p>몇 달 전 카메시마에 흘러들어 온 수수께끼의 소녀. 기억을 잃은 것 같은데…….</p></li>
-            <li><h3>아와오 츠카사</h3><span class="orig-name">沫緒 つかさ · Tsukasa Awao</span>
-              <p>카메시마에서 나고 자란 밝고 활발한 소녀. 지금은 고등학교에 다니려고 본토에서 하숙하고 있다. 미나쿠치 유자, 쿠모이 아자미와는 소꿉친구. 고향에 내려온 동안 시라나미 사토와 친해졌다.</p></li>
-            <li><h3>아르나브 바넘</h3><span class="orig-name">アルナーヴ・バーナム · Arnav Barnum</span>
-              <p>낭만을 찾아 일본에 온 미국인. 본업은 판타지 작가 겸 오컬트 라이터. 아무래도 이세시마에서 인어를 찾고 있는 모양이다. 애칭은 ‘아비’. 40세. 독신.</p></li>
-            <li><h3>키르케 루나라이트</h3><span class="orig-name">キルケ・ルナーライト · Circe Lunarlight</span>
-              <p>《엑소시스트》 소녀. 영국 명문가 출신으로 일본에 유학 중이다. 일본의 전승과 오컬트에 밝아, 친척인 아비의 부탁으로 가이드를 맡고 있다.</p></li>
-            <li><h3>시키 유메코</h3><span class="orig-name">志貴 結命子 · Yumeko Shiki</span>
-              <p>자칭 도쿄의 주부. 무언가를 조사하고 있는 모양인데…….</p></li>
-            <li><h3>키류 소도</h3><span class="orig-name">霧生 双奴 · Sodo Kiryu</span>
-              <p>시키 유메코의 조수로 일하는 청년. 범상치 않은 분위기를 풍긴다.</p></li>
+            <li><div class="cast-pic"><img src="assets/paranormasight2/characters/yuza.webp" width="364" height="321" loading="lazy" alt="미나쿠치 유자"></div><div class="cast-body"><h3>미나쿠치 유자</h3><span class="orig-name">水口 勇佐 · Yuza Minakuchi</span>
+              <p>카메시마에 사는, 성실하면서도 마이페이스인 소년. 은퇴한 할머니의 뒤를 이어 해녀 일을 시작했다. 5년 전 해난 사고로 부모님을 잃었고, 그때 어떤 신비한 일을 겪었다.</p></div></li>
+            <li><div class="cast-pic"><img src="assets/paranormasight2/characters/azami.webp" width="364" height="321" loading="lazy" alt="쿠모이 아자미"></div><div class="cast-body"><h3>쿠모이 아자미</h3><span class="orig-name">雲居 アザミ · Azami Kumoi</span>
+              <p>미나쿠치 유자의 소꿉친구이자 단짝. 세상을 떠난 아버지의 어선을 물려받아 어부로 일한다. 남을 잘 챙겨 주변에서 의지하는 타입으로, 고향 사랑만큼은 누구보다 강하다고 자부한다.</p></div></li>
+            <li><div class="cast-pic"><img src="assets/paranormasight2/characters/sato.webp" width="364" height="321" loading="lazy" alt="시라나미 사토"></div><div class="cast-body"><h3>시라나미 사토</h3><span class="orig-name">白浪 里 · Sato Shiranami</span>
+              <p>몇 달 전 카메시마에 흘러들어 온 수수께끼의 소녀. 기억을 잃은 것 같은데…….</p></div></li>
+            <li><div class="cast-pic"><img src="assets/paranormasight2/characters/tsukasa.webp" width="364" height="321" loading="lazy" alt="아와오 츠카사"></div><div class="cast-body"><h3>아와오 츠카사</h3><span class="orig-name">沫緒 つかさ · Tsukasa Awao</span>
+              <p>카메시마에서 나고 자란 밝고 활발한 소녀. 지금은 고등학교에 다니려고 본토에서 하숙하고 있다. 미나쿠치 유자, 쿠모이 아자미와는 소꿉친구. 고향에 내려온 동안 시라나미 사토와 친해졌다.</p></div></li>
+            <li><div class="cast-pic"><img src="assets/paranormasight2/characters/avi.webp" width="364" height="321" loading="lazy" alt="아르나브 바넘"></div><div class="cast-body"><h3>아르나브 바넘</h3><span class="orig-name">アルナーヴ・バーナム · Arnav Barnum</span>
+              <p>낭만을 찾아 일본에 온 미국인. 본업은 판타지 작가 겸 오컬트 라이터. 아무래도 이세시마에서 인어를 찾고 있는 모양이다. 애칭은 ‘아비’. 40세. 독신.</p></div></li>
+            <li><div class="cast-pic"><img src="assets/paranormasight2/characters/circe.webp" width="364" height="321" loading="lazy" alt="키르케 루나라이트"></div><div class="cast-body"><h3>키르케 루나라이트</h3><span class="orig-name">キルケ・ルナーライト · Circe Lunarlight</span>
+              <p>《엑소시스트》 소녀. 영국 명문가 출신으로 일본에 유학 중이다. 일본의 전승과 오컬트에 밝아, 친척인 아비의 부탁으로 가이드를 맡고 있다.</p></div></li>
+            <li><div class="cast-pic"><img src="assets/paranormasight2/characters/yumeko.webp" width="364" height="321" loading="lazy" alt="시키 유메코"></div><div class="cast-body"><h3>시키 유메코</h3><span class="orig-name">志貴 結命子 · Yumeko Shiki</span>
+              <p>자칭 도쿄의 주부. 무언가를 조사하고 있는 모양인데…….</p></div></li>
+            <li><div class="cast-pic"><img src="assets/paranormasight2/characters/sodo.webp" width="364" height="321" loading="lazy" alt="키류 소도"></div><div class="cast-body"><h3>키류 소도</h3><span class="orig-name">霧生 双奴 · Sodo Kiryu</span>
+              <p>시키 유메코의 조수로 일하는 청년. 범상치 않은 분위기를 풍긴다.</p></div></li>
           </ul>
         </div>
       </details>
