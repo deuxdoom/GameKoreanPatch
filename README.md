@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  <a href="https://deuxdoom.github.io/GameKoreanPatch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a>
+</p>
+
+<p align="center">
   <a href="#진행-현황">진행 현황</a> ·
   <a href="#지원-환경">지원 환경</a> ·
   <a href="#설치와-사용">설치와 사용</a> ·
