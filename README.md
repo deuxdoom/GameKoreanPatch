@@ -215,3 +215,7 @@
 원작 공식 사이트: [PARANORMASIGHT FILE38 (일본어)](https://www.jp.square-enix.com/paranormasight/file38/) · Steam 스토어: [PARANORMASIGHT: The Mermaid's Curse](https://store.steampowered.com/app/2701440/PARANORMASIGHT_The_Mermaids_Curse/)
 
 <p align="center">한글 패치 제작 · <b>SAKURA</b></p>
+
+<p align="center">
+  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases"><img src="https://img.shields.io/github/downloads/deuxdoom/GameKoreanPatch/total?label=%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C&color=7fd8cb" alt="전체 다운로드 수"></a>
+</p>
