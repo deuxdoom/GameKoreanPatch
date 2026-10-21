@@ -40,14 +40,24 @@
 개발 중인 시험판에서 찍은 화면입니다. 배포판에서는 글꼴과 표현이 달라질 수 있습니다. 이미지를 누르면 크게 볼 수 있습니다.
 
 <p align="center">
-  <a href="assets/paranormasight2/screens/title.webp"><img src="assets/paranormasight2/screens/title-960.webp" alt="한국어 제목과 메뉴가 표시된 타이틀 화면" width="100%"></a>
+  <a href="assets/paranormasight2/screens/title.webp"><img src="assets/paranormasight2/screens/title-960.webp" alt="한국어 제목 ‘이세 인어 이야기’와 한국어 메뉴가 표시된 타이틀 화면" width="100%"></a><br>
+  <sub>타이틀 화면</sub>
 </p>
 
-| 시작 안내 · 한글 패치 제작자 표기 | 인물 목록 |
+| **설정 · 언어 설정** | **카메시마 지도** |
 |---|---|
-| <a href="assets/paranormasight2/screens/warning.webp"><img src="assets/paranormasight2/screens/warning-960.webp" alt="한국어 시작 안내와 한글 패치 제작자 표기"></a> | <a href="assets/paranormasight2/screens/characters.webp"><img src="assets/paranormasight2/screens/characters-960.webp" alt="한국어 인물 목록 화면"></a> |
-| **자료 · 카메시마루** | **자료 · 카메시마 남해의 대재난** |
-| <a href="assets/paranormasight2/screens/document-kamessy.webp"><img src="assets/paranormasight2/screens/document-kamessy-960.webp" alt="한국어 자료 화면, 카메시마루"></a> | <a href="assets/paranormasight2/screens/document-disaster.webp"><img src="assets/paranormasight2/screens/document-disaster-960.webp" alt="한국어 자료 화면, 카메시마 남해의 대재난"></a> |
+| <a href="assets/paranormasight2/screens/settings.webp"><img src="assets/paranormasight2/screens/settings-960.webp" alt="한국어로 옮긴 설정 화면. 언어 설정에 한국어가 선택되어 있다"></a> | <a href="assets/paranormasight2/screens/map.webp"><img src="assets/paranormasight2/screens/map-960.webp" alt="부두·와카무라 가·등대 등 한국어 장소 이름이 표시된 카메시마 지도"></a> |
+| **인물 목록** | **자료 · 카메시마 남해의 대재난** |
+| <a href="assets/paranormasight2/screens/characters.webp"><img src="assets/paranormasight2/screens/characters-960.webp" alt="한국어 인물 목록 화면에서 미나쿠치 유자의 소개를 연 모습"></a> | <a href="assets/paranormasight2/screens/document-disaster.webp"><img src="assets/paranormasight2/screens/document-disaster-960.webp" alt="한국어 자료 화면에서 카메시마 남해의 대재난 항목을 연 모습"></a> |
+| **자료 · 카메시마루** | **자료 · 동화 『우라시마 타로』** |
+| <a href="assets/paranormasight2/screens/document-kamessy.webp"><img src="assets/paranormasight2/screens/document-kamessy-960.webp" alt="한국어 자료 화면에서 카메시마루 항목을 연 모습"></a> | <a href="assets/paranormasight2/screens/document-urashima.webp"><img src="assets/paranormasight2/screens/document-urashima-960.webp" alt="한국어 자료 화면에서 동화 우라시마 타로 항목과 한국어 그림 설명을 연 모습"></a> |
+| **대화 장면** | **인물 등장 · 와카무라 시노부** |
+| <a href="assets/paranormasight2/screens/dialogue.webp"><img src="assets/paranormasight2/screens/dialogue-960.webp" alt="아자미가 한국어로 말하는 대화 장면"></a> | <a href="assets/paranormasight2/screens/intro-shinobu.webp"><img src="assets/paranormasight2/screens/intro-shinobu-960.webp" alt="‘섬의 유력자 와카무라 시노부’ 한국어 인물 소개가 표시된 장면"></a> |
+
+<p align="center">
+  <a href="assets/paranormasight2/screens/warning.webp"><img src="assets/paranormasight2/screens/warning-960.webp" alt="한국어로 옮긴 시작 안내 문구와 분홍색 ‘한글 패치 제작자 : SAKURA’ 표기" width="100%"></a><br>
+  <sub>시작 안내 · 한글 패치 제작자 표기</sub>
+</p>
 
 ## 진행 현황
 
