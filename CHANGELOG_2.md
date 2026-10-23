@@ -6,7 +6,7 @@
 
 ### 적용 기준과 현재 상태
 
-기준 공개본은 2026-10-22 배포한 v1.0.0이며 당시 게임 입력은 `FONT-20261022-01`이다. 사용자 확인·제작 승인 후 FIX05의 게임 파일을 그대로 담은 **v1.0.1 정식 설치 파일을 제작**했다. 다운로드는 [v1.0.1 릴리스](https://github.com/deuxdoom/GameKoreanPatch/releases/tag/v1.0.1)에서 제공한다.
+기준 공개본은 2026-10-22 배포한 v1.0.0이며 당시 게임 입력은 `FONT-20261022-01`이다. 사용자 확인·제작 승인 후 FIX05의 게임 파일을 그대로 담은 **v1.0.1 정식 설치 파일을 제작**했다. 다운로드는 [v1.0.1 릴리스](https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases/tag/v1.0.1)에서 제공한다.
 
 | 구분 | 반영 내용 | 확인 상태 |
 |---|---|---|
@@ -327,7 +327,7 @@ FIX02에서 타이틀 소바에의 질문에 `미나구치 유자`를 입력하�
 - 정상 설치·재설치, 조건 불충족 재설치 거부, 등록 누락 상태의 제거, 변경된 대상 제거, 현재 `.bak` 복원, 원본 백업 누락·오래된 등록 해시, 원본만 새 백업, 기존 백업 보존, 설치 실패 롤백, 같은 폴더의 이전 등록 통합·다른 폴더 등록 보존 및 위 차단 조건을 합쳐 **22개 QA 시나리오**가 통과했다.
 - 게임을 새로 실행한 결과로 기록하지 않는다. 헤이케는 사용자 해결 확인, 타이틀 풀네임·Enter 순서·추가 언어 답안 등 기존 확인 범위는 각 항목과 [QNA_2.md](QNA_2.md)를 따른다.
 
-상태: **정식 설치 파일 제작·검증 완료.** [v1.0.1 릴리스](https://github.com/deuxdoom/GameKoreanPatch/releases/tag/v1.0.1)에서 배포한다. 내부 근거: `analysis/installer-v1.0.1/build.json`·`tests-basic.json`·`final-verification_2.json`·`frozen-installer-inputs/`.
+상태: **정식 설치 파일 제작·검증 완료.** [v1.0.1 릴리스](https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases/tag/v1.0.1)에서 배포한다. 내부 근거: `analysis/installer-v1.0.1/build.json`·`tests-basic.json`·`final-verification_2.json`·`frozen-installer-inputs/`.
 
 ### 22. 중간 수정본 적용 후 제거와 원본 백업 — REV-080
 
@@ -369,6 +369,12 @@ DLL 해시 불일치·`steam_emu.ini` 존재를 비롯한 설치 조건 실패 �
 ### 26. 퍼즐 입력 FAQ와 정답 안내 링크 — REV-084
 
 자주 묻는 질문에 **퍼즐 정답을 입력해도 안 넘어가요.** 항목을 추가했다. [QNA_2.md의 퀴즈 정답 안내](QNA_2.md)에서 문제별 권장 입력을 확인하도록 연결하고, 해결되지 않으면 문제 제보로 알려 달라는 문구를 넣었다. FAQ 본문에는 특정 장면이나 정답을 쓰지 않았다. 브라우저에서 FAQ 펼치기·문구와 QNA_2.md 이동을 확인했다.
+
+### 27. 저장소 이름 변경에 따른 공개 링크 수정
+
+- 저장소 이름 변경에 따라 README·소개 페이지·변경 이력의 링크 18곳을 `PARANORMASIGHT-KR-Patch` 주소로 수정했다.
+- 설치 파일·릴리스·변경내역·퀴즈 안내·제보 폼·GitHub Issues·소개 페이지·다운로드 수 배지에 적용했다.
+- 검사: 공개 추적 파일에서 이전 저장소명이 남지 않았음을 확인했다. 새 소개 페이지·릴리스·설치 파일·변경내역·퀴즈 안내·Issues·배지 주소 7곳이 HTTP 200으로 응답했다. 게임과 설치 파일의 변경은 없다.
 
 ### 시험 묶음·검증 기록
 

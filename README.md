@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.1_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="한글패치 설치파일" width="320"></a>
-  <a href="https://deuxdoom.github.io/GameKoreanPatch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a><br>
+  <a href="https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.1_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="한글패치 설치파일" width="320"></a>
+  <a href="https://deuxdoom.github.io/PARANORMASIGHT-KR-Patch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a><br>
   <sub>PARANORMASIGHT2_KR_v1.0.1_Setup.exe · 약 177MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
 </p>
 
@@ -31,7 +31,7 @@
 > ### 🙏 번역에 대한 부탁
 > 일본어 원문을 하나하나 확인하고 자연스러운 한국어로 다듬었지만, 그래도 부족한 부분이 있을 수 있습니다. 너그러운 양해 부탁드립니다.
 > **오역이나 어색한 표현, 더 나은 번역이 떠오르면 언제든 적극적으로 제보해 주세요.** 보내 주신 의견은 하나하나 확인하겠습니다.
-> → [소개 페이지 제보 폼](https://deuxdoom.github.io/GameKoreanPatch/#report) · [GitHub Issues](https://github.com/deuxdoom/GameKoreanPatch/issues/new)
+> → [소개 페이지 제보 폼](https://deuxdoom.github.io/PARANORMASIGHT-KR-Patch/#report) · [GitHub Issues](https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/issues/new)
 
 > [!IMPORTANT]
 > **정식 v1.0.1을 배포합니다.** 위 버튼에서 설치 프로그램을 내려받아 실행해 주세요. 기존 `.bak`은 보존하며, 새 백업은 원본과 일치하는 파일만 만듭니다. 제거하면 남아 있는 `.bak`을 복원합니다. 자세한 방법은 [설치와 사용](#설치와-사용), 수정 내용은 [변경 이력](CHANGELOG_2.md)을 확인해 주세요.
@@ -123,7 +123,7 @@
 정식 v1.0.1은 설치 EXE 하나로 제공합니다. 게임의 일본어 자리에 한국어를 표시합니다. 기존 버전 사용자는 먼저 제거하지 않고 같은 게임 폴더에 설치하면 됩니다.
 
 1. 게임을 종료하고 Steam 게임 **속성 → 일반 → 언어**를 **日本語(일본어)** 로 설정합니다. 내려받기가 시작되면 완료될 때까지 기다립니다.
-2. [PARANORMASIGHT2_KR_v1.0.1_Setup.exe](https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.1_Setup.exe)를 실행하고 설치 확인에 동의합니다.
+2. [PARANORMASIGHT2_KR_v1.0.1_Setup.exe](https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.1_Setup.exe)를 실행하고 설치 확인에 동의합니다.
 3. 기본 경로는 `C:\Program Files (x86)\Steam\steamapps\common\PARANORMASIGHT_2`입니다. 다른 위치에 설치했다면 **찾아보기**로 실제 게임 폴더를 선택합니다.
 4. 설치가 끝나면 **완료**를 눌러 닫고 게임을 실행합니다.
 
@@ -170,7 +170,7 @@
 
 ## 문제 제보
 
-오역, 어색한 표현, 글자 잘림, 진행 문제는 [소개 페이지의 제보 폼](https://deuxdoom.github.io/GameKoreanPatch/#report)이나 [GitHub Issues](https://github.com/deuxdoom/GameKoreanPatch/issues/new)에 남겨 주세요. 제보하려면 GitHub 로그인이 필요합니다. 다음 내용을 함께 적어 주시면 빠르게 확인할 수 있습니다.
+오역, 어색한 표현, 글자 잘림, 진행 문제는 [소개 페이지의 제보 폼](https://deuxdoom.github.io/PARANORMASIGHT-KR-Patch/#report)이나 [GitHub Issues](https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/issues/new)에 남겨 주세요. 제보하려면 GitHub 로그인이 필요합니다. 다음 내용을 함께 적어 주시면 빠르게 확인할 수 있습니다.
 
 - 문제가 나온 장면과 바로 전에 한 조작
 - 화면 스크린샷(이슈 본문에 끌어다 놓거나 붙여 넣기)
@@ -201,5 +201,5 @@
 <p align="center">한글 패치 제작 · <b>SAKURA</b></p>
 
 <p align="center">
-  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases"><img src="https://img.shields.io/github/downloads/deuxdoom/GameKoreanPatch/total?label=%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C&color=7fd8cb" alt="전체 다운로드 수"></a>
+  <a href="https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases"><img src="https://img.shields.io/github/downloads/deuxdoom/PARANORMASIGHT-KR-Patch/total?label=%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C&color=7fd8cb" alt="전체 다운로드 수"></a>
 </p>
