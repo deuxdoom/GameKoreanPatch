@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="한글패치 설치파일" width="320"></a>
+  <a href="https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.1_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="한글패치 설치파일" width="320"></a>
   <a href="https://deuxdoom.github.io/GameKoreanPatch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a><br>
-  <sub>PARANORMASIGHT2_KR_v1.0.0_Setup.exe · 약 187MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
+  <sub>PARANORMASIGHT2_KR_v1.0.1_Setup.exe · 약 177MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
 </p>
 
 <p align="center">
@@ -34,7 +34,7 @@
 > → [소개 페이지 제보 폼](https://deuxdoom.github.io/GameKoreanPatch/#report) · [GitHub Issues](https://github.com/deuxdoom/GameKoreanPatch/issues/new)
 
 > [!IMPORTANT]
-> **정식 v1.0.0을 배포합니다.** 위 버튼에서 설치 프로그램을 내려받아 실행해 주세요. 게임 폴더를 선택하면 설치되며, 덮어쓰는 파일은 `.bak`으로 보존합니다. 제거하면 설치 직전 파일로 복원합니다. 자세한 방법은 [설치와 사용](#설치와-사용)을 확인해 주세요.
+> **정식 v1.0.1을 배포합니다.** 위 버튼에서 설치 프로그램을 내려받아 실행해 주세요. 기존 `.bak`은 보존하며, 새 백업은 원본과 일치하는 파일만 만듭니다. 제거하면 남아 있는 `.bak`을 복원합니다. 자세한 방법은 [설치와 사용](#설치와-사용), 수정 내용은 [변경 이력](CHANGELOG_2.md)을 확인해 주세요.
 
 ## 소개
 
@@ -120,10 +120,10 @@
 
 ## 설치와 사용
 
-정식 v1.0.0은 설치 EXE 하나로 제공합니다. 게임의 일본어 자리에 한국어를 표시합니다.
+정식 v1.0.1은 설치 EXE 하나로 제공합니다. 게임의 일본어 자리에 한국어를 표시합니다. 기존 버전 사용자는 먼저 제거하지 않고 같은 게임 폴더에 설치하면 됩니다.
 
 1. 게임을 종료하고 Steam 게임 **속성 → 일반 → 언어**를 **日本語(일본어)** 로 설정합니다. 내려받기가 시작되면 완료될 때까지 기다립니다.
-2. [PARANORMASIGHT2_KR_v1.0.0_Setup.exe](https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.0_Setup.exe)를 실행하고 설치 확인에 동의합니다.
+2. [PARANORMASIGHT2_KR_v1.0.1_Setup.exe](https://github.com/deuxdoom/GameKoreanPatch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.1_Setup.exe)를 실행하고 설치 확인에 동의합니다.
 3. 기본 경로는 `C:\Program Files (x86)\Steam\steamapps\common\PARANORMASIGHT_2`입니다. 다른 위치에 설치했다면 **찾아보기**로 실제 게임 폴더를 선택합니다.
 4. 설치가 끝나면 **완료**를 눌러 닫고 게임을 실행합니다.
 
@@ -133,12 +133,11 @@
 
 ### 되돌리기
 
-- Windows **설정 → 앱 → 설치된 앱**에서 **파라노마사이트 FILE38 한국어 패치 v1.0.0 (SAKURA)** 를 제거합니다.
-- 설치 목록이 없어도 게임 폴더의 `unins000.exe`를 실행해 `.bak`으로 복원할 수 있습니다. 이전 설치 파일에서 제거 오류가 났다면 새 Setup을 한 번 실행해 제거기를 갱신해 주세요.
-- 덮어쓴 파일은 같은 위치의 `파일명.bak`으로 보관합니다. 제거하면 패치 파일을 지우고 백업을 원래 이름으로 복원합니다. 재설치해도 최초 백업을 유지합니다.
-- 기존 `.bak`이 있으면 덮어쓰지 않고 그 백업을 유지합니다.
-- 설치 전에 수동 패치가 적용되어 있었다면 그 상태로 돌아갑니다. 게임의 원본으로 되돌리려면 Steam **속성 → 설치된 파일 → 게임 파일 무결성 확인**을 이용합니다.
-- 설치 후 다른 업데이트·패치가 파일을 바꾼 경우 확인 없이 덮어쓰지 않습니다. 백업이 없거나 손상되면 복원 성공으로 처리하지 않습니다.
+- Windows **설정 → 앱 → 설치된 앱**에서 **파라노마 사이트2 한국어 패치**를 제거합니다.
+- 설치 목록이 없어도 게임 폴더의 `unins000.exe`로 제거할 수 있습니다. 이전 제거기에서 오류가 났다면 새 Setup을 같은 게임 폴더에 설치해 제거기를 갱신해 주세요.
+- 제거할 때 설치한 파일 목록에 따라 패치 파일을 지우고, 같은 위치에 남아 있는 `파일명.bak`을 원래 이름으로 복원합니다. 중간 수정본을 덮어썼어도 제거할 수 있습니다.
+- 기존 `.bak`은 덮어쓰지 않습니다. 백업이 없으면 검증된 원본 파일만 새 `.bak`으로 만들며, 이미 패치된 파일은 원본 백업으로 만들지 않습니다.
+- `.bak`이 없는 대상은 제거 시 삭제됩니다. 원본 백업을 지운 경우에는 제거 후 Steam **속성 → 설치된 파일 → 게임 파일 무결성 확인**으로 게임 파일을 복구해 주세요.
 
 > [!NOTE]
 > Steam의 **게임 파일 무결성 확인**이나 게임 업데이트가 패치한 파일을 원래대로 되돌릴 수 있습니다. 게임이 업데이트되면 새 판본을 지원하는 패치가 나올 때까지 기다려 주세요.
