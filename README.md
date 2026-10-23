@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.1_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="한글패치 설치파일" width="320"></a>
+  <a href="https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.2_Setup.exe"><img src="assets/paranormasight2/button-download-v1.svg" alt="한글패치 설치파일" width="320"></a>
   <a href="https://deuxdoom.github.io/PARANORMASIGHT-KR-Patch/"><img src="assets/paranormasight2/button-intro-page.png" alt="소개 페이지 바로가기" width="320"></a><br>
-  <sub>PARANORMASIGHT2_KR_v1.0.1_Setup.exe · 약 177MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
+  <sub>PARANORMASIGHT2_KR_v1.0.2_Setup.exe · 약 177MB · 설치 방법은 <a href="#설치와-사용">설치와 사용</a> 참고</sub>
 </p>
 
 <p align="center">
@@ -34,7 +34,7 @@
 > → [소개 페이지 제보 폼](https://deuxdoom.github.io/PARANORMASIGHT-KR-Patch/#report) · [GitHub Issues](https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/issues/new)
 
 > [!IMPORTANT]
-> **정식 v1.0.1을 배포합니다.** 위 버튼에서 설치 프로그램을 내려받아 실행해 주세요. 기존 `.bak`은 보존하며, 새 백업은 원본과 일치하는 파일만 만듭니다. 제거하면 남아 있는 `.bak`을 복원합니다. 자세한 방법은 [설치와 사용](#설치와-사용), 수정 내용은 [변경 이력](CHANGELOG_2.md)을 확인해 주세요.
+> **정식 v1.0.2를 배포합니다.** 위 버튼에서 설치 프로그램을 내려받아 실행해 주세요. 기존 `.bak`은 보존하며, 새 백업은 원본과 일치하는 파일만 만듭니다. 제거하면 남아 있는 `.bak`을 복원합니다. 자세한 방법은 [설치와 사용](#설치와-사용), 수정 내용은 [변경 이력](CHANGELOG_2.md)을 확인해 주세요.
 
 ## 소개
 
@@ -120,10 +120,10 @@
 
 ## 설치와 사용
 
-정식 v1.0.1은 설치 EXE 하나로 제공합니다. 게임의 일본어 자리에 한국어를 표시합니다. 기존 버전 사용자는 먼저 제거하지 않고 같은 게임 폴더에 설치하면 됩니다.
+정식 v1.0.2 설치 파일은 EXE 하나로 구성됩니다. 게임의 일본어 자리에 한국어를 표시합니다. 기존 버전 사용자는 먼저 제거하지 않고 같은 게임 폴더에 설치하면 됩니다.
 
 1. 게임을 종료하고 Steam 게임 **속성 → 일반 → 언어**를 **日本語(일본어)** 로 설정합니다. 내려받기가 시작되면 완료될 때까지 기다립니다.
-2. [PARANORMASIGHT2_KR_v1.0.1_Setup.exe](https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.1_Setup.exe)를 실행하고 설치 확인에 동의합니다.
+2. [PARANORMASIGHT2_KR_v1.0.2_Setup.exe](https://github.com/deuxdoom/PARANORMASIGHT-KR-Patch/releases/latest/download/PARANORMASIGHT2_KR_v1.0.2_Setup.exe)를 실행하고 설치 확인에 동의합니다.
 3. 기본 경로는 `C:\Program Files (x86)\Steam\steamapps\common\PARANORMASIGHT_2`입니다. 다른 위치에 설치했다면 **찾아보기**로 실제 게임 폴더를 선택합니다.
 4. 설치가 끝나면 **완료**를 눌러 닫고 게임을 실행합니다.
 
